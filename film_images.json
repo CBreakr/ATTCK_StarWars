@@ -1,0 +1,35 @@
+{
+  "__comments": {
+    "1":"because the movie list is such a small dataset, and one is subject to very infrequent change (as well as being a couple of years out of date as is), using some pre-collected image information seems appropriate"
+  }
+  "films": [
+    {"title":"A New Hope",
+      "api_path":"1",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/0/06/Star_Wars_Style_A_poster_1977.jpg/"
+    },
+    {"title":"The Empire Strikes Back",
+      "api_path":"2",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/e/e4/Empire_strikes_back_old.jpg/"
+    },
+    {"title":"Return of the Jedi",
+      "api_path":"3",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/b/b2/ReturnOfTheJediPoster1983.jpg/"
+    },
+    {"title":"The Phantom Menace",
+      "api_path":"4",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/7/75/EPI_TPM_poster.png/"
+    },
+    {"title":"Attack of the Clones",
+      "api_path":"5",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/d/dd/Attack-Clones-Poster.jpg/"
+    },
+    {"title":"Revenge of the Sith",
+      "api_path":"6",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/e/e7/EPIII_RotS_poster.png/"
+    },
+    {"title":"The Force Awakens",
+      "api_path":"7",
+      "imageurl":"https://vignette.wikia.nocookie.net/starwars/images/f/fd/Star_Wars_Episode_VII_The_Force_Awakens.jpg/"
+    }
+  ]
+}

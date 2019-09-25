@@ -1,0 +1,28 @@
+
+{
+
+"__comments": {
+    "1": "added closing braces",
+    "2": "corrected Obi-wan's id to be 10",
+    "3": "corrected R2-D2's id to be 3",
+    "4": "added imageurl property to characters"
+  },
+
+"characters": [{
+  "name": "Luke Skywalker",
+  "url": "https://swapi.co/api/people/1/",
+  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg/"
+}, {
+  "name": "Darth Vader",
+  "url": "https://swapi.co/api/people/4/",
+  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/a/a3/ANOVOS_Darth_Vader_1.png/"
+}, {
+  "name": "Obi-wan Kenobi",
+  "url": "https://swapi.co/api/people/10/",
+  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/4/4e/ObiWanHS-SWE.jpg/"
+}, {
+  "name": "R2-D2",
+  "url": "https://swapi.co/api/people/3/",
+  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png/"
+}]
+}

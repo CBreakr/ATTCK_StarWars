@@ -12,7 +12,7 @@ const fetchOptionsJSON = {
 export const ActionTypes = {
   RECEIVE_CHARACTERS:"RECEIVE_CHARACTERS",
   RECEIVE_FILM_IMAGES:"RECEIVE_FILM_IMAGES",
-  RECEIVE_FILMS_FOR_CHARACTER:"RECEIVE_FILMS_FOR_CHARACTER"
+  RECEIVE_CHARACTER_DETAILS:"RECEIVE_CHARACTER_DETAILS"
 };
 
 export const DispatchActions {
@@ -20,7 +20,7 @@ export const DispatchActions {
     fetch(characterConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      DispatchActions.receiveCharacters(data);
+      dispatch(DispatchActions.receiveCharacters(data));
     })
     .catch(err => {
       console.log("error request character list", err);
@@ -36,7 +36,7 @@ export const DispatchActions {
     fetch(film_imagesConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      DispatchActions.receiveFilmImages(data);
+      dispatch(DispatchActions.receiveFilmImages(data));
     })
     .catch(err => {
       console.log("error request film images", err);
@@ -48,7 +48,7 @@ export const DispatchActions {
       images
     };
   },
-  requestFilmsForCharacter: (character, dispatch) => {
+  requestCharacterDetails: (character, dispatch) => {
     // I can cache this
     // because there's no reason to make this call every time
     // with data that updates so infrequently
@@ -56,17 +56,17 @@ export const DispatchActions {
     fetch(character.api_url, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      DispatchActions.receiveFilmsForCharacter(character, data);
+      dispatch(DispatchActions.receiveCharacterDetails(character, data));
     })
     .catch(err => {
-      console.log("error request films for character", err);
+      console.log("error request films for character", err, character);
     });
   },
-  receiveFilmsForCharacter: (character, films) => {
+  receiveCharacterDetails: (character, details) => {
     return {
       type: ActionTypes.RECEIVE_FILMS_FOR_CHARACTER,
       character,
-      films
+      details
     };
   }
 };

@@ -44,8 +44,8 @@ const rootReducer = async (state = initialState, action) => {
 //
 function findMatchingCharacterInState(state, character){
   let index = -1;
-  const char = newState.characters.find(element => {
-    const found = char.url === action.character.url;
+  const char = state.characters.find(element => {
+    const found = character.url === element.character.url;
     index++;
     return found;
   });
@@ -78,10 +78,13 @@ async function addDetailsToCharacter(state, char, details){
 //
 //
 async function fetchFilmDetails(filmURL){
-  const res = await fetch(filmURL, headers : {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  });
+  const res = await fetch(filmURL,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
 
   return await res.json();
 }

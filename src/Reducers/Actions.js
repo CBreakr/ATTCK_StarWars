@@ -15,7 +15,7 @@ export const ActionTypes = {
   RECEIVE_CHARACTER_DETAILS:"RECEIVE_CHARACTER_DETAILS"
 };
 
-export const DispatchActions {
+export const DispatchActions = {
   requestCharacters: dispatch => {
     fetch(characterConfigURL, fetchOptionsJSON)
     .then(res => res.json())

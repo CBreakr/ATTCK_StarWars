@@ -1,7 +1,7 @@
 {
   "__comments": {
     "1":"because the movie list is such a small dataset, and one is subject to very infrequent change (as well as being a couple of years out of date as is), using some pre-collected image information seems appropriate"
-  }
+  },
   "films": [
     {"title":"A New Hope",
       "episode_id": 4,

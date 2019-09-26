@@ -20,7 +20,8 @@ export const DispatchActions = {
     fetch(characterConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      dispatch(DispatchActions.receiveCharacters(data));
+      console.log("we have character config", data);
+      dispatch(DispatchActions.receiveCharacters(data.characters));
     })
     .catch(err => {
       console.log("error request character list", err);
@@ -36,7 +37,8 @@ export const DispatchActions = {
     fetch(film_imagesConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      dispatch(DispatchActions.receiveFilmImages(data));
+      console.log("we have film images", data);
+      dispatch(DispatchActions.receiveFilmImages(data.films));
     })
     .catch(err => {
       console.log("error request film images", err);
@@ -48,15 +50,16 @@ export const DispatchActions = {
       images
     };
   },
-  requestCharacterDetails: (character, dispatch) => {
+  requestCharacterDetails: async (character, dispatch) => {
     // I can cache this
     // because there's no reason to make this call every time
     // with data that updates so infrequently
 
     fetch(character.api_url, fetchOptionsJSON)
     .then(res => res.json())
-    .then(data => {
-      dispatch(DispatchActions.receiveCharacterDetails(character, data));
+    .then(async (data) => {
+      await addDetailsToCharacter(character, data);
+      dispatch(DispatchActions.receiveCharacterDetails(character));
     })
     .catch(err => {
       console.log("error request films for character", err, character);
@@ -70,3 +73,31 @@ export const DispatchActions = {
     };
   }
 };
+
+//
+//
+//
+async function addDetailsToCharacter(character, details){
+  character.details = details;
+  character.films = [];
+
+  await Promise.all(
+    details.films.map(async (filmURL) => {
+      const filmDetails = await fetchFilmDetails(filmURL);
+      if(filmDetails){
+        character.films.push(filmDetails);
+      }
+      else{
+        console.log("error getting film details", filmURL);
+      }
+    }
+  ));
+}
+
+//
+//
+//
+async function fetchFilmDetails(filmURL){
+  const res = await fetch(filmURL, fetchOptionsJSON);
+  return await res.json();
+}

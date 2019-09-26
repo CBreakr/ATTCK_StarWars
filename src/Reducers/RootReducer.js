@@ -2,11 +2,14 @@
 import { ActionTypes } from "./Actions";
 
 const initialState = {
+  test:"this is a test value",
   characters:[],
   filmImages:[]
 }
 
-const rootReducer = async (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
+
+  console.log("starting state with action", state, action);
 
   const newState = {...state};
 
@@ -18,23 +21,24 @@ const rootReducer = async (state = initialState, action) => {
       newState.filmImages = action.images;
       break;
     case ActionTypes.RECEIVE_CHARACTER_DETAILS:
-      // find the character, make a shallow copy
-      // add the films to the character
+      // find the character
+      // substitute the new character in
       // add the images to the films
-      const {char, index} = findMatchingCharacterInState(newState, action.character);
 
-      if(char && index >= 0){
-        newState.characters[index] = {...char};
-        await addDetailsToCharacter(newState, newState.characters[index], action.details);
-      }
-      else{
-        console.log("invalid character", action.character);
-      }
+      const characters = state.characters;
+      newState.characters = [...characters];
+      replaceCharacterInList(newState, action.character);
+
+      action.character.films.forEach(film => {
+        addImageToFilm(newState, film);
+      });
 
       break;
     default:
       ;
   }
+
+  console.log("new state", newState);
 
   return newState;
 }
@@ -42,51 +46,8 @@ const rootReducer = async (state = initialState, action) => {
 //
 //
 //
-function findMatchingCharacterInState(state, character){
-  let index = -1;
-  const char = state.characters.find(element => {
-    const found = character.url === element.character.url;
-    index++;
-    return found;
-  });
+function replaceCharacterInList(state, character){
 
-  return {char, index};
-}
-
-//
-//
-//
-async function addDetailsToCharacter(state, char, details){
-  char.details = details;
-  char.films = [];
-
-  await Promise.all(
-    details.films.map(async (filmURL) => {
-      const filmDetails = await fetchFilmDetails(filmURL);
-      if(filmDetails){
-        addImageToFilm(state, filmDetails);
-        char.films.push(filmDetails);
-      }
-      else{
-        console.log("error getting film details", filmURL);
-      }
-    }
-  ));
-}
-
-//
-//
-//
-async function fetchFilmDetails(filmURL){
-  const res = await fetch(filmURL,
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-    });
-
-  return await res.json();
 }
 
 //

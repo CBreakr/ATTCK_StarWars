@@ -12,7 +12,7 @@ const fetchOptionsJSON = {
 export const ActionTypes = {
   RECEIVE_CHARACTERS:"RECEIVE_CHARACTERS",
   RECEIVE_FILM_IMAGES:"RECEIVE_FILM_IMAGES",
-  RECEIVE_FILM_FOR_CHARACTER:"RECEIVE_FILMS_FOR_CHARACTER"
+  RECEIVE_FILMS_FOR_CHARACTER:"RECEIVE_FILMS_FOR_CHARACTER"
 };
 
 export const DispatchActions {
@@ -49,6 +49,10 @@ export const DispatchActions {
     };
   },
   requestFilmsForCharacter: (character, dispatch) => {
+    // I can cache this
+    // because there's no reason to make this call every time
+    // with data that updates so infrequently
+
     fetch(character.api_url, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {

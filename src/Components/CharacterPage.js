@@ -23,7 +23,7 @@ class CharacterPage extends React.Component{
           {
             this.props.characters
             ? this.props.characters.map(character => (
-                <Character key={character.name} character={character} />
+                <Character key={character.name} character={character} isLink={true} />
               ))
             : <span>Loading</span>
           }

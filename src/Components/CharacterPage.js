@@ -1,6 +1,8 @@
 
 import React from "react";
 
+import Character from "../Containers/CharacterContainer";
+
 class CharacterPage extends React.Component{
 
   componentDidMount(){
@@ -9,21 +11,18 @@ class CharacterPage extends React.Component{
   }
 
   render(){
-
-    console.log("render", this.props);
-
     return (
       <div>
         Character Page
-        {
-          this.props.characters
-          ? this.props.characters.map(character => (
-              <div key={character.name}>
-                {character.name}
-              </div>
-            ))
-          : <span>Loading</span>
-        }
+        <div style={{display:"flex"}}>
+          {
+            this.props.characters
+            ? this.props.characters.map(character => (
+                <Character key={character.name} character={character} />
+              ))
+            : <span>Loading</span>
+          }
+        </div>
       </div>
     );
   }

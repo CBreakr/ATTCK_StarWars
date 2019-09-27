@@ -11,18 +11,18 @@
 "characters": [{
   "name": "Luke Skywalker",
   "url": "https://swapi.co/api/people/1/",
-  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg/"
+  "imageURL": "https://vignette.wikia.nocookie.net/starwars/images/2/20/LukeTLJ.jpg/"
 }, {
   "name": "Darth Vader",
   "url": "https://swapi.co/api/people/4/",
-  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/a/a3/ANOVOS_Darth_Vader_1.png/"
+  "imageURL": "https://vignette.wikia.nocookie.net/starwars/images/a/a3/ANOVOS_Darth_Vader_1.png/"
 }, {
   "name": "Obi-wan Kenobi",
   "url": "https://swapi.co/api/people/10/",
-  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/4/4e/ObiWanHS-SWE.jpg/"
+  "imageURL": "https://vignette.wikia.nocookie.net/starwars/images/4/4e/ObiWanHS-SWE.jpg/"
 }, {
   "name": "R2-D2",
   "url": "https://swapi.co/api/people/3/",
-  "imageurl": "https://vignette.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png/"
+  "imageURL": "https://vignette.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png/"
 }]
 }

@@ -9,10 +9,10 @@ class Character extends React.Component {
 
     return (
       <Link to={filmsURL}>
-        <div style={{border:"1px solid black", width:"45%"}}>
+        <div style={{border:"1px solid black"}}>
           {character.name}
           <br />
-          <img style={{width:"80%"}} src={character.imageURL} />
+          <img style={{width:"200px"}} src={character.imageURL} />
         </div>
       </Link>
     );

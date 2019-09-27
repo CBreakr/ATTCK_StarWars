@@ -8,6 +8,10 @@ import Film from "../Containers/FilmContainer";
 class FilmPage extends React.Component {
 
   componentDidMount(){
+    if(!this.props.characters){
+      return;
+    }
+
     const characterId = this.props.match.params.characterId;
 
     const character = findCharacterById(this.props.characters, characterId);
@@ -23,6 +27,13 @@ class FilmPage extends React.Component {
   }
 
   render(){
+    if(!this.props.characters){
+      console.log("redirecting");
+      return (
+        <Redirect to="/" />
+      );
+    }
+
     const characterId = this.props.match.params.characterId;
     const character = findCharacterById(this.props.characters, characterId);
 

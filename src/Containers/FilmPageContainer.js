@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch => {
   return {
     requestCharacterDetails: character => {
       DispatchActions.requestCharacterDetails(character, dispatch);
+    },
+    receiveCharacterDetails: character => {
+      DispatchActions.receiveCharacterDetails(character);
     }
   }
 };

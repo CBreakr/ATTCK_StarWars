@@ -4,7 +4,8 @@ import { ActionTypes } from "./Actions";
 const initialState = {
   test:"this is a test value",
   characters:[],
-  filmImages:[]
+  filmImages:[],
+  currentCharacter:null
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -27,11 +28,19 @@ const rootReducer = (state = initialState, action) => {
 
       const characters = state.characters;
       newState.characters = [...characters];
-      replaceCharacterInList(newState, action.character);
+      const current = replaceCharacterInList(newState, action.character);
 
-      action.character.films.forEach(film => {
-        addImageToFilm(newState, film);
-      });
+      console.log("current", current);
+
+      if(!current.filmImagesAdded){
+        current.films.forEach(film => {
+          console.log("add image to film", film);
+          addImageToFilm(newState, film);
+        });
+        current.filmImagesAdded = true;
+      }
+
+      newState.currentCharacter = current;
 
       break;
     default:
@@ -47,7 +56,18 @@ const rootReducer = (state = initialState, action) => {
 //
 //
 function replaceCharacterInList(state, character){
+  // return the character that's found
+  let index = -1;
+  const char = state.characters.find(element => {
+    index++;
+    return character.id === element.id;
+  });
 
+  if(char){
+    state.characters[index] = character;
+  }
+
+  return char;
 }
 
 //

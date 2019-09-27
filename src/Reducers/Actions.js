@@ -20,7 +20,6 @@ export const DispatchActions = {
     fetch(characterConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      console.log("we have character config", data);
       dispatch(DispatchActions.receiveCharacters(data.characters));
     })
     .catch(err => {
@@ -37,7 +36,6 @@ export const DispatchActions = {
     fetch(film_imagesConfigURL, fetchOptionsJSON)
     .then(res => res.json())
     .then(data => {
-      console.log("we have film images", data);
       dispatch(DispatchActions.receiveFilmImages(data.films));
     })
     .catch(err => {
@@ -55,9 +53,12 @@ export const DispatchActions = {
     // because there's no reason to make this call every time
     // with data that updates so infrequently
 
-    fetch(character.api_url, fetchOptionsJSON)
+    console.log(`URL: ${character.URL}`);
+
+    fetch(character.URL, fetchOptionsJSON)
     .then(res => res.json())
     .then(async (data) => {
+      console.log("detail data", data);
       await addDetailsToCharacter(character, data);
       dispatch(DispatchActions.receiveCharacterDetails(character));
     })
@@ -67,7 +68,7 @@ export const DispatchActions = {
   },
   receiveCharacterDetails: (character, details) => {
     return {
-      type: ActionTypes.RECEIVE_FILMS_FOR_CHARACTER,
+      type: ActionTypes.RECEIVE_CHARACTER_DETAILS,
       character,
       details
     };
@@ -78,8 +79,8 @@ export const DispatchActions = {
 //
 //
 async function addDetailsToCharacter(character, details){
-  character.details = details;
   character.films = [];
+  character.filmImagesAdded = false;
 
   await Promise.all(
     details.films.map(async (filmURL) => {

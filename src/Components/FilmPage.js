@@ -2,6 +2,7 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
 
+import Character from "../Containers/CharacterContainer";
 import Film from "../Containers/FilmContainer";
 
 class FilmPage extends React.Component {
@@ -33,6 +34,7 @@ class FilmPage extends React.Component {
             Back
           </div>
         </Link>
+        <Character character={character} />
         <div style={{display:"flex"}}>
           {
             character && character.films

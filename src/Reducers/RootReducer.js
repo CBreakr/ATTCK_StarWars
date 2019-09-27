@@ -5,12 +5,10 @@ const initialState = {
   test:"this is a test value",
   characters:[],
   filmImages:[],
-  currentCharacter:null
+  // currentCharacter:null
 }
 
 const rootReducer = (state = initialState, action) => {
-
-  console.log("starting state with action", state, action);
 
   const newState = {...state};
 
@@ -30,17 +28,14 @@ const rootReducer = (state = initialState, action) => {
       newState.characters = [...characters];
       const current = replaceCharacterInList(newState, action.character);
 
-      console.log("current", current);
-
       if(!current.filmImagesAdded){
         current.films.forEach(film => {
-          console.log("add image to film", film);
           addImageToFilm(newState, film);
         });
         current.filmImagesAdded = true;
       }
 
-      newState.currentCharacter = current;
+      // newState.currentCharacter = current;
 
       break;
     default:

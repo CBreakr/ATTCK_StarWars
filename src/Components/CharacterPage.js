@@ -6,8 +6,13 @@ import Character from "../Containers/CharacterContainer";
 class CharacterPage extends React.Component{
 
   componentDidMount(){
-    this.props.requestFilmImages();
-    this.props.requestCharacters();
+    if(!this.props.filmImages){
+      this.props.requestFilmImages();
+    }
+
+    if(!this.props.characters){
+      this.props.requestCharacters();
+    }
   }
 
   render(){

@@ -53,12 +53,9 @@ export const DispatchActions = {
     // because there's no reason to make this call every time
     // with data that updates so infrequently
 
-    console.log(`URL: ${character.URL}`);
-
     fetch(character.URL, fetchOptionsJSON)
     .then(res => res.json())
     .then(async (data) => {
-      console.log("detail data", data);
       await addDetailsToCharacter(character, data);
       dispatch(DispatchActions.receiveCharacterDetails(character));
     })

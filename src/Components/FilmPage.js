@@ -1,35 +1,38 @@
 
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 import Film from "../Containers/FilmContainer";
 
 class FilmPage extends React.Component {
 
   componentDidMount(){
-    console.log("props for films page", this.props);
-
-    const {characterId} = this.props.match.params;
+    const characterId = this.props.match.params.characterId;
 
     const character = findCharacterById(this.props.characters, characterId);
 
-    console.log(`character: ${characterId}`, character);
-
     if(character && !character.films){
+      console.log("no films yet");
       this.props.requestCharacterDetails(character);
     }
     else{
+      console.log("we have the films");
       this.props.receiveCharacterDetails(character);
     }
   }
 
   render(){
-    const character = this.props.currentCharacter;
+    const characterId = this.props.match.params.characterId;
+    const character = findCharacterById(this.props.characters, characterId);
 
     return (
       <div>
         Film Page
-        <div>
+        <Link to="/">
+          <div>
+            Back
+          </div>
+        </Link>
         <div style={{display:"flex"}}>
           {
             character && character.films
@@ -38,7 +41,6 @@ class FilmPage extends React.Component {
               ))
             : <span>Loading</span>
           }
-        </div>
         </div>
       </div>
     );

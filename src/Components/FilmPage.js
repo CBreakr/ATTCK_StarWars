@@ -39,7 +39,6 @@ class FilmPage extends React.Component {
 
     return (
       <div>
-        Film Page
         <Link to="/">
           <div>
             Back

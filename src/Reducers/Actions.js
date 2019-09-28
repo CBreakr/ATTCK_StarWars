@@ -90,6 +90,29 @@ async function addDetailsToCharacter(character, details){
       }
     }
   ));
+
+  const sortedFilms = filmSort(character.films);
+  character.films = sortedFilms;
+}
+
+//
+// sort these films in order of episode_id
+//
+export function filmSort(films){
+  // these are short lists, so just an insertion sort will do
+  const copy = [...films];
+
+  for(let i = 0; i < copy.length; i++){
+    let film = copy[i];
+    let j = i-1;
+    // walk down the already-sorted films
+    for(; j >= 0 && copy[j].episode_id > film.episode_id; j--){
+      copy[j+1] = copy[j];
+    }
+    copy[j+1] = film;
+  }
+
+  return copy;
 }
 
 //

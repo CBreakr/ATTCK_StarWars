@@ -10,8 +10,10 @@ class App extends React.Component {
   render(){
     return (
       <div className="App" style={{background:"url('/images/space.jpg') top right no-repeat", backgroundAttachment:"fixed"}}>
-        <h1>STAR<br />WARS</h1>
-        <h3 style={{marginTop:"8px"}}>DISCOVER THE FILMS OF YOUR FAVORITE CHARACTERS!</h3>
+        <span className="header">
+          <h1>STAR<br />WARS</h1>
+          <h2 style={{marginTop:"8px"}}>DISCOVER THE FILMS OF YOUR FAVORITE CHARACTERS</h2>
+        </span>
         <div style={{marginTop:"16px"}}>
           <Switch>
             <Route exact path="/films/:characterId" component={FilmPage} />

@@ -22,14 +22,19 @@ class Film extends React.Component {
     const release_date = dateformat(new Date(film.release_date), "dddd, mmmm dS, yyyy");
 
     return (
-      <div style={{border:"1px solid black", width:"45%"}}>
-        {film.title}
-        <br />
-        <img style={{width:"80%"}} src={film.imageURL} />
-        <br />
-        Directed By: {film.director}
-        <br />
-        Released: {release_date}
+      <div className="filmComponent">
+        <span style={{gridArea:"title"}}>
+          <span style={{fontSize:"2rem", backgroundColor:"black"}}>{film.title}</span>
+        </span>
+        <span style={{gridArea:"image"}}>
+          <img style={{width:"95%", border:"2px solid var(--card-blue)"}} src={film.imageURL} />
+        </span>
+        <span style={{gridArea:"director"}}>
+          <span style={{backgroundColor:"black"}}>Directed By: <br /> {film.director}</span>
+        </span>
+        <span style={{gridArea:"released", backgrundColor:"black"}}>
+          <span style={{backgroundColor:"black"}}>Released: <br /> {release_date}</span>
+        </span>
       </div>
     );
   }

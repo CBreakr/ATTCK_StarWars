@@ -25,8 +25,8 @@ class Character extends React.Component {
 
 const InnerComponent = (props) => {
   return (
-    <div style={{margin:"16px auto" }}>
-      <span style={{textDecoration:"none", color:"rgb(255, 232, 31)"}}>
+    <div style={{margin:"16px auto 0"}}>
+      <span className="characterName">
         {props.character.name}
       </span>
       <br />

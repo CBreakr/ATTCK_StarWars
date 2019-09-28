@@ -40,19 +40,21 @@ class FilmPage extends React.Component {
     return (
       <div>
         <Link to="/">
-          <div>
-            Back
+          <div className="backLink">
+            Pick Another Character
           </div>
         </Link>
-        <Character character={character} />
-        <div style={{display:"flex"}}>
-          {
-            character && character.films
-            ? character.films.map(film => (
-                <Film key={film.episode_id} film={film} />
-              ))
-            : <span>Loading</span>
-          }
+        <div className="filmMainDisplay">
+          <Character character={character} />
+          <div className="filmListing">
+            {
+              character && character.films
+              ? character.films.map(film => (
+                  <Film key={film.episode_id} film={film} />
+                ))
+              : <span>Loading</span>
+            }
+          </div>
         </div>
       </div>
     );

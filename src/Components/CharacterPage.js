@@ -18,7 +18,7 @@ class CharacterPage extends React.Component{
   render(){
     return (
       <div>
-        <div style={{margin:"0px auto",width:"80%", display:"grid", gridGap:"2px", gridTemplateColumns:"1fr 1fr", justifyItems:"center"}}>
+        <div style={{margin:"0px auto",width:"80%", display:"grid", gridGap:"2px", gridTemplateColumns:"1fr 1fr", justifyItems:"center", gridAutoRows:"1fr", columnGap:"5vw"}}>
           {
             this.props.characters
             ? this.props.characters.map(character => (

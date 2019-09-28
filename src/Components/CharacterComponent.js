@@ -30,7 +30,7 @@ const InnerComponent = (props) => {
         {props.character.name}
       </span>
       <br />
-      <img style={{height:"60vh"}} src={props.character.imageURL} />
+      <img style={{width:"40vw"}} src={props.character.imageURL} />
     </div>
   );
 }

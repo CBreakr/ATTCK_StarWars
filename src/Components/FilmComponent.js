@@ -20,20 +20,29 @@ class Film extends React.Component {
     */
 
     const release_date = dateformat(new Date(film.release_date), "dddd, mmmm dS, yyyy");
+    const [day, date, year] = release_date.split(",");
 
     return (
       <div className="filmComponent">
         <span style={{gridArea:"title"}}>
-          <span style={{fontSize:"2rem", backgroundColor:"black"}}>{film.title}</span>
+          <span style={{fontSize:"2rem", textTransform:"uppercase", backgroundColor:"var(--background-black)"}}>{film.title}</span>
         </span>
         <span style={{gridArea:"image"}}>
-          <img style={{width:"95%", border:"2px solid var(--card-blue)"}} src={film.imageURL} />
+          <img style={{width:"30vw", border:"4px solid var(--card-blue)"}} src={film.imageURL} />
         </span>
-        <span style={{gridArea:"director"}}>
-          <span style={{backgroundColor:"black"}}>Directed By: <br /> {film.director}</span>
-        </span>
-        <span style={{gridArea:"released", backgrundColor:"black"}}>
-          <span style={{backgroundColor:"black"}}>Released: <br /> {release_date}</span>
+        <span style={{gridArea:"meta"}}>
+          <div style={{marginTop:"10px"}}>
+            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>DIRECTED&nbsp;BY:</div>
+            <br />
+            <div style={{display:"inline-block", margin:"3px", backgroundColor:"var(--background-black)"}}>{film.director}</div>
+          </div>
+          <div style={{marginTop:"20px"}}>
+            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>RELEASED:</div>
+            <br />
+            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>{`${day},${date}`}</div>
+            <br />
+            <div style={{display:"inline-block", fontSize:"1.7rem", backgroundColor:"var(--background-black)"}}>{year}</div>
+          </div>
         </span>
       </div>
     );

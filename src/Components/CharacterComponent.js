@@ -17,7 +17,7 @@ class Character extends React.Component {
           <InnerComponent character={this.props.character} />
         </Link>
       : <InnerComponent character={this.props.character} />
-      }      
+      }
       </>
     );
   }
@@ -25,10 +25,12 @@ class Character extends React.Component {
 
 const InnerComponent = (props) => {
   return (
-    <div style={{border:"1px solid black"}}>
-      {props.character.name}
+    <div style={{margin:"16px auto" }}>
+      <span style={{textDecoration:"none", color:"rgb(255, 232, 31)"}}>
+        {props.character.name}
+      </span>
       <br />
-      <img style={{width:"200px"}} src={props.character.imageURL} />
+      <img style={{height:"60vh"}} src={props.character.imageURL} />
     </div>
   );
 }

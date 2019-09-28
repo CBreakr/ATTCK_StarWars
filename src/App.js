@@ -9,13 +9,16 @@ import FilmPage from "./Containers/FilmPageContainer";
 class App extends React.Component {
   render(){
     return (
-      <div className="App" style={{background:"url('/images/space.jpg') top right no-repeat", backgroundAttachment:"fixed", height:"100vh"}}>
-        <h1>STAR WARS</h1>
-        <Switch>
-          <Route exact path="/films/:characterId" component={FilmPage} />
-          <Route exact path="/" component={CharacterPage} />
-          <Redirect to="/" />
-        </Switch>
+      <div className="App" style={{background:"url('/images/space.jpg') top right no-repeat", backgroundAttachment:"fixed"}}>
+        <h1>STAR<br />WARS</h1>
+        <h3 style={{marginTop:"8px"}}>DISCOVER THE FILMS OF YOUR FAVORITE CHARACTERS!</h3>
+        <div style={{marginTop:"16px"}}>
+          <Switch>
+            <Route exact path="/films/:characterId" component={FilmPage} />
+            <Route exact path="/" component={CharacterPage} />
+            <Redirect to="/" />
+          </Switch>
+        </div>
       </div>
     );
   }

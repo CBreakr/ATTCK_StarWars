@@ -55,7 +55,7 @@ h1 {
 }
 
 h2 {
-  margin:2vh;
+  margin:2vh 0 0;
   padding:1px 10px;
   display:inline-block;
 }
@@ -66,6 +66,7 @@ a {
 
 .backgroundBlur{
   background-image: radial-gradient(var(--background-black), var(--background-clear));
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.6), -2px -2px 2px rgba(0,0,0,0.6), -2px 2px 2px rgba(0,0,0,0.6), 2px -2px 2px rgba(0,0,0,0.6);
 }
 
 .characterName {
@@ -75,7 +76,7 @@ a {
 }
 
 .backLink {
-  display:inline-block;
+  /* display:inline-block; */
   padding:5px;
   color:black;
   background-color: var(--yellow);
@@ -86,7 +87,7 @@ a {
 }
 
 .filmMainDisplay {
-  margin:2vw;
+  margin:0 2vw;
   display:grid;
   column-gap:5vw;
   grid-template-columns: 1fr 2fr;
@@ -100,7 +101,7 @@ a {
 }
 
 .filmComponent {
-  margin-top: 5vh;
+  margin-top: 1vh;
   color: var(--card-blue);
 
   display:grid;

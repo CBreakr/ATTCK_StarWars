@@ -3,6 +3,10 @@ import React from "react";
 
 import dateformat from "dateformat";
 
+const backgroundBlurInline = {
+
+}
+
 class Film extends React.Component {
 
   render(){
@@ -25,23 +29,25 @@ class Film extends React.Component {
     return (
       <div className="filmComponent">
         <span style={{gridArea:"title"}}>
-          <span style={{fontSize:"2rem", textTransform:"uppercase", backgroundColor:"var(--background-black)"}}>{film.title}</span>
+          <div className="backgroundBlur" style={{fontSize:"2rem", textTransform:"uppercase", padding:"10px 15px 0"}}>{film.title}</div>
         </span>
         <span style={{gridArea:"image"}}>
           <img style={{width:"30vw", border:"4px solid var(--card-blue)"}} src={film.imageURL} />
         </span>
-        <span style={{gridArea:"meta"}}>
-          <div style={{marginTop:"10px"}}>
-            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>DIRECTED&nbsp;BY:</div>
+        <span style={{gridArea:"meta", justifySelf:"center"}}>
+          <div className="backgroundBlur" style={{marginTop:"20px", paddingTop:"30px", padding:"5px"}}>
+            <div style={{display:"inline-block"}}>DIRECTED&nbsp;BY:</div>
             <br />
-            <div style={{display:"inline-block", margin:"3px", backgroundColor:"var(--background-black)"}}>{film.director}</div>
+            <div style={{display:"inline-block", margin:"3px"}}>{film.director}</div>
           </div>
-          <div style={{marginTop:"20px"}}>
-            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>RELEASED:</div>
+          <div className="backgroundBlur" style={{marginTop:"20px", padding:"5px"}}>
+            <div style={{display:"inline-block"}}>RELEASED:</div>
             <br />
-            <div style={{display:"inline-block", backgroundColor:"var(--background-black)"}}>{`${day},${date}`}</div>
+            <div style={{display:"inline-block"}}>{`${day},`}</div>
             <br />
-            <div style={{display:"inline-block", fontSize:"1.7rem", backgroundColor:"var(--background-black)"}}>{year}</div>
+            <div style={{display:"inline-block"}}>{`${date}`}</div>
+            <br />
+            <div style={{display:"inline-block", fontSize:"1.7rem"}}>{year}</div>
           </div>
         </span>
       </div>

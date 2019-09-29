@@ -25,12 +25,11 @@ class Character extends React.Component {
 
 const InnerComponent = (props) => {
   return (
-    <div style={{margin:"16px auto 0"}}>
-      <span className="characterName">
+    <div style={{margin:"5vh auto 0"}}>
+      <div className="characterName backgroundBlur">
         {props.character.name}
-      </span>
-      <br />
-      <img style={{width:"40vw"}} src={props.character.imageURL} />
+      </div>
+      <img style={{width:"30vw"}} src={props.character.imageURL} />
     </div>
   );
 }

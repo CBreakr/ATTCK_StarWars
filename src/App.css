@@ -4,7 +4,8 @@
   /* --card-blue: rgb(110, 180, 240); */
   /* --card-blue: rgb(20, 140, 210); */
   --card-blue: rgb(30, 150, 220);
-  --background-black: rgba(0,0,0,0.55);
+  --background-black: rgba(0,0,0,1);
+  --background-clear: rgba(255,255,255,0);
 }
 
 * {
@@ -29,13 +30,22 @@ body {
   height:100vh;
   background:url('/images/space.jpg') top right no-repeat;
   background-attachment:fixed;
-  font-size:2vh;
+  background-size:cover;
 }
 
+/*
+applying text-align here causes issues
+*/
+
 .App {
+  padding-top:20px;
   text-align: center;
-  padding-top:16px;
 }
+
+/*
+I want to move all of the text styling
+to the css file to treat it all uniformly
+*/
 
 .header {
 }
@@ -45,18 +55,21 @@ h1 {
 }
 
 h2 {
-  margin:1px;
-  padding:1px;
+  margin:2vh;
+  padding:1px 10px;
   display:inline-block;
-  background-color: var(--background-black);
 }
 
 a {
   text-decoration: none;
 }
 
+.backgroundBlur{
+  background-image: radial-gradient(var(--background-black), var(--background-clear));
+}
+
 .characterName {
-  background-color: var(--background-black);
+  padding: 10px 10px 0;
   color:var(--card-blue);
   font-size: 2rem;
 }
@@ -73,11 +86,12 @@ a {
 }
 
 .filmMainDisplay {
-  margin:5px;
+  margin:2vw;
   display:grid;
   column-gap:5vw;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: 1fr;
+
 }
 
 .filmListing {
@@ -86,7 +100,7 @@ a {
 }
 
 .filmComponent {
-  margin-top: 16px;
+  margin-top: 5vh;
   color: var(--card-blue);
 
   display:grid;
@@ -95,4 +109,5 @@ a {
     "image image meta"
     "image image ."
     ;
+  justify-content: left;
 }

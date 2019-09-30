@@ -133,6 +133,7 @@ BACKLINK
   border: 0.4vw solid rgba(0, 0, 0, 0);
   border-radius:2%;
   text-shadow: 0.1vw 0.1vw 0.2vw var(--backlink-white);
+  transition: 0.3s;
 }
 
 .backLink:hover {

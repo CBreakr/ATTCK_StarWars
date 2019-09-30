@@ -10,12 +10,24 @@ const fetchOptionsJSON = {
 };
 
 export const ActionTypes = {
+  SET_CHARACTER_PAGE:"SET_CHARACTER_PAGE",
+  SET_FILM_PAGE:"SET_FILM_PAGE",
   RECEIVE_CHARACTERS:"RECEIVE_CHARACTERS",
   RECEIVE_FILM_IMAGES:"RECEIVE_FILM_IMAGES",
   RECEIVE_CHARACTER_DETAILS:"RECEIVE_CHARACTER_DETAILS"
 };
 
 export const DispatchActions = {
+  setPageToCharacter: () => {
+    return {
+      type:ActionTypes.SET_CHARACTER_PAGE
+    };
+  },
+  setPageToFilm: () => {
+    return {
+      type:ActionTypes.SET_FILM_PAGE
+    };
+  },
   requestCharacters: dispatch => {
     fetch(characterConfigURL, fetchOptionsJSON)
     .then(res => res.json())

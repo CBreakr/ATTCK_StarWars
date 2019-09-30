@@ -11,6 +11,9 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    setPageToCharacter: () => {
+      DispatchActions.setPageToCharacter();
+    },
     requestCharacters: () => {
       DispatchActions.requestCharacters(dispatch);
     },

@@ -5,7 +5,7 @@ const initialState = {
   test:"this is a test value",
   characters:[],
   filmImages:[],
-  // currentCharacter:null
+  isFilmPage:false
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -13,6 +13,12 @@ const rootReducer = (state = initialState, action) => {
   const newState = {...state};
 
   switch(action.type){
+    case ActionTypes.SET_CHARACTER_PAGE:
+      newState.isFilmPage = false;
+      break;
+    case ActionTypes.SET_FILM_PAGE:
+      newState.isFilmPage = true;
+      break;
     case ActionTypes.RECEIVE_CHARACTERS:
       newState.characters = action.characters;
       break;

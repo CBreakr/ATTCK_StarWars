@@ -54,6 +54,23 @@ a {
 }
 
 /*
+Loading
+*/
+
+.loading {
+  margin: 4vw 0;
+  font-size: 2vw;
+  animation: fadeInOut 2s infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {color: var(--yellow);}
+  50% {color: var(--background-black);}
+  100% {color: var(--yellow);}
+}
+
+/*
 HEADER
 */
 

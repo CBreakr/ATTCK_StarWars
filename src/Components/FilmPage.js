@@ -48,7 +48,7 @@ class FilmPage extends React.Component {
             ? character.films.map(film => (
                 <Film key={film.episode_id} film={film} />
               ))
-            : <span>Loading</span>
+            : <span className="loading">Loading</span>
           }
         </div>
       </div>

@@ -3,10 +3,6 @@ import React from "react";
 
 import dateformat from "dateformat";
 
-const backgroundBlurInline = {
-
-}
-
 class Film extends React.Component {
 
   render(){
@@ -29,35 +25,30 @@ class Film extends React.Component {
     return (
       <div className="filmComponent">
         <span style={{gridArea:"title"}}>
-          <div className="backgroundBlur" style={{fontSize:"2rem", textTransform:"uppercase", padding:"10px 15px 0"}}>{film.title}</div>
+          <div className="backgroundBlur" style={{fontSize:"2em", textTransform:"uppercase", padding:"1vw 1.5vw 0"}}>{film.title}</div>
         </span>
         <span style={{gridArea:"image"}}>
-          <img style={{width:"30vw", border:"4px solid var(--card-blue)"}} src={film.imageURL} />
+          <img style={{width:"30vw", border:"0.4vw solid var(--card-blue)"}} src={film.imageURL} />
         </span>
         <span style={{gridArea:"meta", justifySelf:"center"}}>
-          <div className="backgroundBlur" style={{marginTop:"20px", paddingTop:"30px", padding:"5px"}}>
+          <div className="backgroundBlur" style={{marginTop:"2vw", paddingTop:"3vw", padding:"0.5vw"}}>
             <div style={{display:"inline-block"}}>DIRECTED&nbsp;BY:</div>
             <br />
-            <div style={{display:"inline-block", margin:"3px"}}>{film.director}</div>
+            <div style={{display:"inline-block", margin:"0.5vw"}}>{film.director}</div>
           </div>
-          <div className="backgroundBlur" style={{marginTop:"20px", padding:"5px"}}>
+          <div className="backgroundBlur" style={{marginTop:"0.2vw", padding:"0.5vw"}}>
             <div style={{display:"inline-block"}}>RELEASED:</div>
             <br />
             <div style={{display:"inline-block"}}>{`${day},`}</div>
             <br />
             <div style={{display:"inline-block"}}>{`${date}`}</div>
             <br />
-            <div style={{display:"inline-block", fontSize:"1.7rem"}}>{year}</div>
+            <div style={{display:"inline-block", fontSize:"1.7em"}}>{year}</div>
           </div>
         </span>
       </div>
     );
   }
-}
-
-function getRomanNumeral(episode){
-  // we're dealing with numbers below 20 for the foreseeable future
-
 }
 
 export default Film;

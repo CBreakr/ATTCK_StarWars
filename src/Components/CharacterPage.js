@@ -13,6 +13,8 @@ class CharacterPage extends React.Component{
     if(!this.props.characters){
       this.props.requestCharacters();
     }
+
+    this.props.setPageToCharacter();
   }
 
   render(){

@@ -12,7 +12,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = dispatch => {
   return {
     setPageToFilm: () => {
-      DispatchActions.setPageToFilm();
+      dispatch(DispatchActions.setPageToFilm());
     },
     requestCharacterDetails: character => {
       DispatchActions.requestCharacterDetails(character, dispatch);

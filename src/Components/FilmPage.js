@@ -24,6 +24,8 @@ class FilmPage extends React.Component {
       console.log("we have the films");
       this.props.receiveCharacterDetails(character);
     }
+
+    this.props.setPageToFilm();
   }
 
   render(){
@@ -38,32 +40,22 @@ class FilmPage extends React.Component {
     const character = findCharacterById(this.props.characters, characterId);
 
     return (
-      <div>
-        <Link to="/">
-          <div className="backLink">
-            Pick Another Character
-          </div>
-        </Link>
-        <div className="filmMainDisplay">
-          <Character character={character} />
-          <div className="filmListing">
-            {
-              character && character.films
-              ? character.films.map(film => (
-                  <Film key={film.episode_id} film={film} />
-                ))
-              : <span>Loading</span>
-            }
-          </div>
+      <div className="filmMainDisplay">
+        <Character character={character} />
+        <div className="filmListing">
+          {
+            character && character.films
+            ? character.films.map(film => (
+                <Film key={film.episode_id} film={film} />
+              ))
+            : <span>Loading</span>
+          }
         </div>
       </div>
     );
   }
 }
 
-//
-//
-//
 function findCharacterById(characters, id){
   const match = characters.find(char => {
     // matching string to number here

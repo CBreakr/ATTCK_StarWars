@@ -1,11 +1,12 @@
 
 :root {
+  /*
+  banana yellow is the official color for the logo
+  */
   --yellow: rgb(255, 232, 31);
-  /* --card-blue: rgb(110, 180, 240); */
-  /* --card-blue: rgb(20, 140, 210); */
   --card-blue: rgb(30, 150, 220);
   --background-black: rgba(0,0,0,1);
-  --background-clear: rgba(255,255,255,0);
+  --shadow: rgba(0,0,0,0.6);
 }
 
 * {
@@ -26,38 +27,14 @@
 
 body {
   font-family:"STARWARS";
+  font-size:1vw; /* at optimal size, this is about 10px */
   color:var(--yellow);
   height:100vh;
-  background:url('/images/space.jpg') top right no-repeat;
+
+  /* background:url('/images/space.jpg') top right no-repeat;
   background-attachment:fixed;
-  background-size:cover;
-}
-
-/*
-applying text-align here causes issues
-*/
-
-.App {
-  padding-top:20px;
-  text-align: center;
-}
-
-/*
-I want to move all of the text styling
-to the css file to treat it all uniformly
-*/
-
-.header {
-}
-
-h1 {
-  font-size: 5rem;
-}
-
-h2 {
-  margin:2vh 0 0;
-  padding:1px 10px;
-  display:inline-block;
+  background-size:cover; */
+  background-color:black;
 }
 
 a {
@@ -66,33 +43,95 @@ a {
 
 .backgroundBlur{
   background-image: radial-gradient(var(--background-black), var(--background-clear));
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.6), -2px -2px 2px rgba(0,0,0,0.6), -2px 2px 2px rgba(0,0,0,0.6), 2px -2px 2px rgba(0,0,0,0.6);
+  text-shadow:
+  0.2vw 0.2vw 0.2vw var(--shadow),
+  -0.2vw -0.2vw 0.2vw var(--shadow),
+  -0.2vw 0.2vw 0.2vw var(--shadow),
+  0.2vw -0.2vw 0.2vw var(--shadow);
 }
 
-.characterName {
-  padding: 10px 10px 0;
-  color:var(--card-blue);
-  font-size: 2rem;
+/*
+HEADER
+*/
+
+.header {
+  padding-top:2vw;
+  text-align: center;
+  /* allows the header to hide other contet */
+  background:url('/images/space.jpg') top right no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  z-index:10;
+}
+
+h1 {
+  font-size: 10em;
+}
+
+h2 {
+  color: var(--card-blue);
+  margin:2vh 0;
+  padding:0.1vw 1vw;
+  font-size:3em;
+  display:inline-block;
+}
+
+/*
+BACKLINK
+*/
+
+.backLinkContainer {
+  margin-top: 1.6vw;
+  text-align:center;
 }
 
 .backLink {
-  /* display:inline-block; */
-  padding:5px;
+  text-transform: uppercase;
+  width:20vw;
+  font-size: 1.8em;
+  padding:1.1vw;
   color:black;
-  background-color: var(--yellow);
+  background-color: var(--card-blue);
+  border: 0.4vw solid white;
+  border-radius:5%;
 }
 
 .backLink:hover {
-  background-color: var(--card-blue);
+  border: 0.4vw solid var(--card-blue);
+  background-color: white;
 }
 
+/*
+CHARACTER
+*/
+
+.characterContainer {
+  margin:2vh auto 0;
+  text-align: center;
+  display: inline-block;
+}
+
+.characterName {
+  padding-top: 1.6vw;
+  padding: 1vw 1vw 0;
+  color:var(--card-blue);
+  font-size: 3em;
+}
+
+.characterCard {
+  height:40vw;
+}
+
+/*
+FILM PAGE
+*/
+
 .filmMainDisplay {
-  margin:0 2vw;
+  margin:2vh 2vw;
   display:grid;
   column-gap:5vw;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: 1fr;
-
 }
 
 .filmListing {
@@ -101,7 +140,7 @@ a {
 }
 
 .filmComponent {
-  margin-top: 1vh;
+  margin-top: 2vh;
   color: var(--card-blue);
 
   display:grid;
@@ -111,4 +150,15 @@ a {
     "image image ."
     ;
   justify-content: left;
+}
+
+/*
+MEDIA QUERY FOR PHONE AND TABLET
+*/
+
+/* phone screen: single column */
+@media screen and (max-width:768px){
+  body{
+    color:var(--card-blue);
+  }
 }

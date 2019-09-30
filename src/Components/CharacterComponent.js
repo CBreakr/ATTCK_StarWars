@@ -10,26 +10,26 @@ class Character extends React.Component {
     const isLink = this.props.isLink;
 
     return (
-      <>
-      {
-        isLink
-      ? <Link to={filmsURL}>
-          <InnerComponent character={this.props.character} />
-        </Link>
-      : <InnerComponent character={this.props.character} />
-      }
-      </>
+      <div className="characterContainer">
+        {
+          isLink
+        ? <Link className="characterLink" to={filmsURL}>
+            <InnerComponent character={this.props.character} />
+          </Link>
+        : <InnerComponent character={this.props.character} />
+        }
+      </div>
     );
   }
 }
 
 const InnerComponent = (props) => {
   return (
-    <div style={{margin:"5vh auto 0"}}>
-      <div className="characterName backgroundBlur">
+    <div>
+      <span className="characterName backgroundBlur">
         {props.character.name}
-      </div>
-      <img style={{width:"30vw"}} src={props.character.imageURL} />
+      </span>
+      <img className="characterCard" src={props.character.imageURL} />
     </div>
   );
 }

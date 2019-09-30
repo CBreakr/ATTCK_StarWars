@@ -11,8 +11,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setPageToFilm: () => {
-      dispatch(DispatchActions.setPageToFilm());
+    setPageToFilm: (characterId) => {
+      dispatch(DispatchActions.setPageToFilm(characterId));
     },
     requestCharacterDetails: character => {
       DispatchActions.requestCharacterDetails(character, dispatch);

@@ -5,6 +5,7 @@ const initialState = {
   test:"this is a test value",
   characters:[],
   filmImages:[],
+  characterId: null,
   isFilmPage:false
 }
 
@@ -15,9 +16,12 @@ const rootReducer = (state = initialState, action) => {
   switch(action.type){
     case ActionTypes.SET_CHARACTER_PAGE:
       newState.isFilmPage = false;
+      newState.characterId = null;
       break;
     case ActionTypes.SET_FILM_PAGE:
+      // console.log("set film page", action);
       newState.isFilmPage = true;
+      newState.characterId = action.characterId;
       break;
     case ActionTypes.RECEIVE_CHARACTERS:
       newState.characters = action.characters;
@@ -40,8 +44,6 @@ const rootReducer = (state = initialState, action) => {
         });
         current.filmImagesAdded = true;
       }
-
-      // newState.currentCharacter = current;
 
       break;
     default:

@@ -24,10 +24,11 @@ export const DispatchActions = {
       type:ActionTypes.SET_CHARACTER_PAGE
     };
   },
-  setPageToFilm: () => {
-    console.log("set page to film");
+  setPageToFilm: (characterId) => {
+    console.log("set page to film", characterId);
     return {
-      type:ActionTypes.SET_FILM_PAGE
+      type:ActionTypes.SET_FILM_PAGE,
+      characterId
     };
   },
   requestCharacters: dispatch => {

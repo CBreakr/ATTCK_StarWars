@@ -8,8 +8,9 @@
   --background-black: rgba(0,0,0,0.85);
   --shadow: rgba(0,0,0,0.6);
   --backlink-white: rgba(230, 230, 230, 0.8);
-  --character-header-height: 20vw;
-  --film-header-height: 26vw;
+  --character-header-height: 24.5vw;
+  --film-header-height: 29vw;
+  --film-header-height-mobile: 36vw;
 }
 
 * {
@@ -65,10 +66,11 @@ Loading
 */
 
 .loading {
-  margin: 4vw 0;
+  margin: 4vw auto;
   font-size: 2vw;
   animation: fadeInOut 2s infinite;
   animation-timing-function: ease-in-out;
+  height: 100vh;
 }
 
 @keyframes fadeInOut {
@@ -106,12 +108,16 @@ h1 {
   font-size: 10em;
 }
 
-h2 {
+.instructions {
+  background-color: var(--background-black);
+  display: inline-block;
+  margin-top: 1vw;
   color: var(--card-blue);
-  margin:2vh 0;
-  padding:0.1vw 1vw;
-  font-size:3em;
-  /* display:inline-block; */
+  font-size: 2.5vw;
+  z-index:15;
+}
+
+.characterHeaderName {
   display:none;
 }
 
@@ -120,7 +126,7 @@ BACKLINK
 */
 
 .backLinkContainer {
-  margin-top: 1.6vw;
+  margin-top: 3vw;
 }
 
 .backLink {
@@ -156,7 +162,7 @@ CHARACTER
 }
 
 .characterContainer {
-  margin:2vh auto 0;
+  margin: 0.5vw auto 2vw;
   text-align: center;
 }
 
@@ -241,9 +247,32 @@ MEDIA QUERY FOR PHONE AND TABLET
 
 /* phone screen: single column */
 @media screen and (max-width:768px){
+
+  .filmHeader {
+    height: var(--film-header-height-mobile);
+  }
+
+  .instructions {
+    margin-top: 1.5vw;
+    font-size: 4vw;
+  }
+
+  .characterHeaderName {
+    margin-top: 1vw;
+    padding: 1vw;
+    color: var(--card-blue);
+    font-size: 5em;
+    display: inline-block;
+    background-color: var(--background-black);
+  }
+
   .backLink {
     font-size: 4.5em;
     padding:1.3vw;
+  }
+
+  .characterContainer {
+    margin-top: 1.5vw;
   }
 
   .characterPage {
@@ -262,15 +291,6 @@ MEDIA QUERY FOR PHONE AND TABLET
   }
 
   .filmMainDisplay .characterContainer {
-    /* margin-top:6vh; */
-  }
-
-  .filmMainDisplay .characterName {
-    font-size:3.5em;
-  }
-
-  .filmMainDisplay .characterCard {
-    height: auto;
-    width: 18vw;
+    display: none;
   }
 }

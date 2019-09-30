@@ -14,7 +14,10 @@ class FilmPage extends React.Component {
 
     const characterId = this.props.match.params.characterId;
 
-    const character = findCharacterById(this.props.characters, characterId);
+    const character = this.props.characters.find(char => {
+      // matching string to number here
+      return characterId == char.id;
+    });
 
     if(character && !character.films){
       console.log("no films yet");
@@ -25,7 +28,9 @@ class FilmPage extends React.Component {
       this.props.receiveCharacterDetails(character);
     }
 
-    this.props.setPageToFilm();
+    console.log("film page characterId", characterId);
+
+    this.props.setPageToFilm(characterId);
   }
 
   render(){
@@ -37,7 +42,10 @@ class FilmPage extends React.Component {
     }
 
     const characterId = this.props.match.params.characterId;
-    const character = findCharacterById(this.props.characters, characterId);
+    const character = this.props.characters.find(char => {
+      // matching string to number here
+      return characterId == char.id;
+    });
 
     return (
       <div className="filmMainDisplay">
@@ -54,15 +62,6 @@ class FilmPage extends React.Component {
       </div>
     );
   }
-}
-
-function findCharacterById(characters, id){
-  const match = characters.find(char => {
-    // matching string to number here
-    return id == char.id;
-  });
-
-  return match;
 }
 
 export default FilmPage;

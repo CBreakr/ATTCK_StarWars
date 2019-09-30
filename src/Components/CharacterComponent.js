@@ -28,14 +28,14 @@ const InnerComponent = (props) => {
   if(props.isLink){
     classes = `${classes} innerCharacterHover`;
   }
-  
+
   return (
-    <div className={classes}>
+    <span className={classes}>
       <span className="characterName backgroundBlur">
         {props.character.name}
       </span>
       <img className="characterCard" src={props.character.imageURL} />
-    </div>
+    </span>
   );
 }
 

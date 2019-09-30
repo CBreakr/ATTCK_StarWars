@@ -7,6 +7,9 @@
   --card-blue: rgb(30, 150, 220);
   --background-black: rgba(0,0,0,0.85);
   --shadow: rgba(0,0,0,0.6);
+  --backlink-white: rgba(230, 230, 230, 0.8);
+  --character-header-height: 20vw;
+  --film-header-height: 26vw;
 }
 
 * {
@@ -82,16 +85,17 @@ HEADER
   background-attachment:fixed;
   background-size:cover;
   z-index:10;
+
   position:sticky;
   top:0;
 }
 
 .characterHeader {
-  height: 20vw;
+  height: var(--character-header-height);
 }
 
 .filmHeader {
-  height: 26vw;
+  height: var(--film-header-height);
 }
 
 h1 {
@@ -116,19 +120,20 @@ BACKLINK
 }
 
 .backLink {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   width:20vw;
-  font-size: 1.8em;
+  font-size: 2em;
   padding:1.1vw;
   color:black;
   background-color: var(--card-blue);
   border: 0.4vw solid rgba(0, 0, 0, 0);
   border-radius:2%;
+  text-shadow: 0.1vw 0.1vw 0.2vw var(--backlink-white);
 }
 
 .backLink:hover {
   border: 0.4vw solid var(--card-blue);
-  background-color: rgba(230, 230, 230, 0.8);
+  background-color: var(--backlink-white);
 }
 
 /*
@@ -178,21 +183,41 @@ FILM PAGE
 */
 
 .filmMainDisplay {
-  margin-top:2vh;
-  display:grid;
+  /* margin-top:2vh; */
+
+  /* display:grid;
   column-gap:5vw;
   grid-template-columns: 1fr 2fr;
-  grid-auto-rows: 1fr;
-  background-color: var(--background-black);
+  grid-auto-rows: 1fr; */
+}
+
+.filmMainDisplay .characterContainer {
+  position:sticky;
+  top: var(--film-header-height);
+  width: 30vw;
+  left: 0;
+  margin: 0 2vw;
+  border: 0;
+}
+
+.filmMainDisplay .innerCharacter {
+  border: none;
 }
 
 .filmListing {
+  position: relative;
+  left: 20vw;
+  top: -45vw;
+  width: 37vw;
+  margin: 0 auto;
+
   display:flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .filmComponent {
-  margin-top: 2vh;
+  margin-top: 3vh;
   color: var(--card-blue);
 
   display:grid;
@@ -226,7 +251,7 @@ MEDIA QUERY FOR PHONE AND TABLET
   }
 
   .filmMainDisplay .characterContainer {
-    margin-top:6vh;
+    /* margin-top:6vh; */
   }
 
   .filmMainDisplay .characterName {

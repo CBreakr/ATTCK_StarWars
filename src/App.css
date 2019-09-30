@@ -164,6 +164,7 @@ CHARACTER
   flex-direction: column;
   border: 1vw solid var(--background-black);
   border-radius: 3%;
+  transition: 0.3s;
 }
 
 .innerCharacterHover:hover {

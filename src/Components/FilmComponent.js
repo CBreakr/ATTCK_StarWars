@@ -8,8 +8,6 @@ class Film extends React.Component {
   render(){
     const film = this.props.film;
 
-    console.log("film", film);
-
     /*
     METADATA:
     title

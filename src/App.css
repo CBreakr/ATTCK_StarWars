@@ -5,7 +5,7 @@
   */
   --yellow: rgb(255, 232, 31);
   --card-blue: rgb(30, 150, 220);
-  --background-black: rgba(0,0,0,1);
+  --background-black: rgba(0,0,0,0.85);
   --shadow: rgba(0,0,0,0.6);
 }
 
@@ -31,10 +31,9 @@ body {
   color:var(--yellow);
   height:100vh;
 
-  /* background:url('/images/space.jpg') top right no-repeat;
+  background:url('/images/space.jpg') top right no-repeat;
   background-attachment:fixed;
-  background-size:cover; */
-  background-color:black;
+  background-size:cover;
 }
 
 a {
@@ -48,6 +47,10 @@ a {
   -0.2vw -0.2vw 0.2vw var(--shadow),
   -0.2vw 0.2vw 0.2vw var(--shadow),
   0.2vw -0.2vw 0.2vw var(--shadow);
+}
+
+.mainContent {
+  background-color: var(--background-black);
 }
 
 /*
@@ -67,11 +70,11 @@ HEADER
 }
 
 .characterHeader {
-  height: 25vw;
+  height: 20vw;
 }
 
 .filmHeader {
-  height: 31vw;
+  height: 26vw;
 }
 
 h1 {
@@ -83,7 +86,8 @@ h2 {
   margin:2vh 0;
   padding:0.1vw 1vw;
   font-size:3em;
-  display:inline-block;
+  /* display:inline-block; */
+  display:none;
 }
 
 /*
@@ -114,10 +118,31 @@ BACKLINK
 CHARACTER
 */
 
+.characterPage {
+  margin: 0 auto;
+  padding-bottom: 2vh;
+  width: 85vw;
+  display: grid;
+  grid-gap: 0.2vw;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+}
+
 .characterContainer {
   margin:2vh auto 0;
   text-align: center;
-  display: inline-block;
+}
+
+.innerCharacter {
+  display: flex;
+  flex-direction: column;
+  border: 1vw solid var(--background-black);
+  border-radius: 3%;
+}
+
+.innerCharacterHover:hover {
+  border: 1vw solid var(--yellow);
+  background-color: var(--yellow);
 }
 
 .characterName {
@@ -136,11 +161,12 @@ FILM PAGE
 */
 
 .filmMainDisplay {
-  margin:2vh 2vw;
+  margin-top:2vh;
   display:grid;
   column-gap:5vw;
   grid-template-columns: 1fr 2fr;
   grid-auto-rows: 1fr;
+  background-color: var(--background-black);
 }
 
 .filmListing {

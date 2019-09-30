@@ -14,9 +14,9 @@ class Character extends React.Component {
         {
           isLink
         ? <Link className="characterLink" to={filmsURL}>
-            <InnerComponent character={this.props.character} />
+            <InnerComponent character={this.props.character} isLink={true} />
           </Link>
-        : <InnerComponent character={this.props.character} />
+        : <InnerComponent character={this.props.character} isLink={false} />
         }
       </div>
     );
@@ -24,8 +24,13 @@ class Character extends React.Component {
 }
 
 const InnerComponent = (props) => {
+  let classes = "innerCharacter";
+  if(props.isLink){
+    classes = `${classes} innerCharacterHover`;
+  }
+  
   return (
-    <div>
+    <div className={classes}>
       <span className="characterName backgroundBlur">
         {props.character.name}
       </span>

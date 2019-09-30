@@ -195,12 +195,7 @@ FILM PAGE
 */
 
 .filmMainDisplay {
-  /* margin-top:2vh; */
 
-  /* display:grid;
-  column-gap:5vw;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-rows: 1fr; */
 }
 
 .filmMainDisplay .characterContainer {
@@ -238,7 +233,7 @@ FILM PAGE
     "image image meta"
     "image image ."
     ;
-  justify-content: left;
+  justify-content: center;
 }
 
 /*
@@ -292,5 +287,11 @@ MEDIA QUERY FOR PHONE AND TABLET
 
   .filmMainDisplay .characterContainer {
     display: none;
+  }
+
+  .filmListing {
+    top: auto;
+    left: auto;
+    width: 80vw;
   }
 }

@@ -210,7 +210,31 @@ MEDIA QUERY FOR PHONE AND TABLET
 
 /* phone screen: single column */
 @media screen and (max-width:768px){
-  body{
-    color:var(--card-blue);
+  .characterPage {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .innerCharacter .characterName {
+    font-size:4.7em;
+  }
+
+  .innerCharacter .characterCard {
+    height: auto;
+    width: 60vw;
+  }
+
+  .filmMainDisplay .characterContainer {
+    margin-top:6vh;
+  }
+
+  .filmMainDisplay .characterName {
+    font-size:3.5em;
+  }
+
+  .filmMainDisplay .characterCard {
+    height: auto;
+    width: 18vw;
   }
 }

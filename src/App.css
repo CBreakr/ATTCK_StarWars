@@ -28,11 +28,15 @@
   font-style:normal;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family:"STARWARS";
   font-size:1vw; /* at optimal size, this is about 10px */
   color:var(--yellow);
-  height:100vh;
+  /* height:100vh; */
 
   background:url('/images/space.jpg') top right no-repeat;
   background-attachment:fixed;
@@ -235,6 +239,11 @@ MEDIA QUERY FOR PHONE AND TABLET
 
 /* phone screen: single column */
 @media screen and (max-width:768px){
+  .backLink {
+    font-size: 4.5em;
+    padding:1.3vw;
+  }
+
   .characterPage {
     display: grid;
     grid-template-columns: 1fr;

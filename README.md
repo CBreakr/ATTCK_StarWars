@@ -1,3 +1,12 @@
+
+This toy application is meant to serve as a demonstration of React and CSS using a fun and familiar subject - Star Wars.
+
+The page will load a set of pre-selected characters to a main selection page and allow the user to click on their card displays to see a list of the films that character has been featured in.
+
+While looking for character images of roughly uniform size and quality to use, I stumbled across some old trading cards. I decided that I wanted to go for a somewhat retro feel to the page while leaning on the colors and styles of the films. I thought that this worked well with the fact that the data and interaction of the page was limited.
+
+The page is responsive, with differing displays for mobile, web, and varying larger widths.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

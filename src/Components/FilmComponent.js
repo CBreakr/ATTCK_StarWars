@@ -22,19 +22,19 @@ class Film extends React.Component {
 
     return (
       <div className="filmComponent">
-        <div className="filmTitle backgroundBlur">
+        <div className="filmTitle textShadowDark">
           {film.title}
         </div>
         <div className="filmImageContainer">
           <img className="filmImage" src={film.imageURL} alt={film.title} />
         </div>
         <span className="filmMeta">
-          <div className="backgroundBlur filmDirectedByContainer">
+          <div className="textShadowDark filmDirectedByContainer">
             <div className="filmDirectedByHeader">DIRECTED&nbsp;BY:</div>
             <br />
             <div className="filmDirectedBy">{film.director}</div>
           </div>
-          <div className="backgroundBlur filmReleasedContainer">
+          <div className="textShadowDark filmReleasedContainer">
             <div className="filmReleasedHeader">RELEASED:</div>
             <br />
             <div className="filmReleasedDayName">{`${day},`}</div>

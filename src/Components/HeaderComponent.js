@@ -27,7 +27,7 @@ class Header extends React.Component {
         <h1>STAR<br />WARS</h1>
         {this.props.isFilmPage
           ? <>
-            <div className="characterHeaderName backgroundBlur">
+            <div className="characterHeaderName textShadowDark">
               {character.name}
             </div>
             <div className="backLinkContainer">
@@ -38,7 +38,7 @@ class Header extends React.Component {
               </Link>
             </div>
           </>
-          :<div className="instructions backgroundBlur">
+          :<div className="instructions textShadowDark">
             Select a character to explore their films
           </div>
         }

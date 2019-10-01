@@ -31,7 +31,7 @@ const InnerComponent = (props) => {
 
   return (
     <span className={classes}>
-      <span className="characterName backgroundBlur">
+      <span className="characterName textShadowDark">
         {props.character.name}
       </span>
       <img className="characterCard" src={props.character.imageURL} alt={props.character.name} />

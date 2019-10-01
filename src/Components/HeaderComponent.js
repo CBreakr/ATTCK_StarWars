@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 class Header extends React.Component {
   render() {
 
-    console.log("header state", this.props);
-
     let additionalClass = "";
     if(this.props.isFilmPage){
       additionalClass = "filmHeader";

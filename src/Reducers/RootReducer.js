@@ -73,8 +73,6 @@ const rootReducer = (state = initialState, action) => {
       ;
   }
 
-  console.log("new state", newState);
-
   return newState;
 }
 

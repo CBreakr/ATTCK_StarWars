@@ -34,7 +34,7 @@ const InnerComponent = (props) => {
       <span className="characterName backgroundBlur">
         {props.character.name}
       </span>
-      <img className="characterCard" src={props.character.imageURL} />
+      <img className="characterCard" src={props.character.imageURL} alt={props.character.name} />
     </span>
   );
 }

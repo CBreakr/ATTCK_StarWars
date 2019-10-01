@@ -21,13 +21,11 @@ export const ActionTypes = {
 
 export const DispatchActions = {
   setPageToCharacter: () => {
-    console.log("set page to character");
     return {
       type:ActionTypes.SET_CHARACTER_PAGE
     };
   },
   setPageToFilm: (characterId) => {
-    console.log("set page to film", characterId);
     return {
       type:ActionTypes.SET_FILM_PAGE,
       characterId

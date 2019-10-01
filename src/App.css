@@ -133,7 +133,7 @@ BACKLINK
 .backLink {
   /* text-transform: uppercase; */
   width:20vmin;
-  font-size: 2.5em;
+  font-size: 2.7em;
   padding:1.1vmin;
   color:black;
   background-color: var(--card-blue);
@@ -296,12 +296,14 @@ Inside the film component
 .filmMeta {
   grid-area:meta;
   justify-self:center;
+  margin-top: 3vh;
 }
 
 .filmDirectedByContainer {
   margin-top:2vw;
   padding-top:3vw;
   padding:0.5vw;
+  text-align: center;
 }
 
 .filmDirectedByHeader {
@@ -315,8 +317,9 @@ Inside the film component
 }
 
 .filmReleasedContainer {
-  margin-top:0.5vw;
+  margin-top: 1vw;
   padding:0.5vw;
+  text-align: center;
 }
 
 .filmReleasedHeader {
@@ -326,7 +329,7 @@ Inside the film component
 
 .filmReleasedDayName {
   display:inline-block;
-  margin:1vw;
+  margin-top:1vw;
 }
 
 .filmReleasedMonthAndDate {
@@ -396,6 +399,10 @@ MEDIA QUERY FOR medium screen on film page
   .filmImage {
     height:50vh;
     border:0.4vh solid var(--card-blue);
+  }
+
+  .filmMeta {
+    margin-top: 3vh;
   }
 }
 
@@ -482,6 +489,7 @@ MEDIA QUERY FOR PHONE AND TABLET
 
   .filmImageContainer {
     grid-area:image;
+    margin-top: 1vh;
   }
 
   .filmImage {
@@ -511,7 +519,7 @@ MEDIA QUERY FOR PHONE AND TABLET
   }
 
   .filmReleasedContainer {
-    margin-top:0.5vw;
+    margin-top:2vw;
     padding:0.5vw;
   }
 

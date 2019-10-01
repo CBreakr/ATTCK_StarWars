@@ -2,6 +2,11 @@
 /*
 MEDIA QUERY FOR WIDE DISPLAY
 */
+
+/*
+split the character list into
+4 columns instead of two
+*/
 @media screen and (min-width:1200px){
   .characterPage {
     margin: 0 auto;
@@ -26,6 +31,10 @@ MEDIA QUERY FOR WIDE DISPLAY
 MEDIA QUERY FOR medium screen on film page
 */
 
+/*
+the screen gets too cramped in this range,
+and so ths sizing and spacing needs to be adjusted
+*/
 @media screen and (min-width:768px) and (max-width:970px){
   .filmMainDisplay .characterCard {
     height: 50vh;
@@ -66,7 +75,12 @@ MEDIA QUERY FOR medium screen on film page
 MEDIA QUERY FOR PHONE AND TABLET
 */
 
-/* phone screen: single column */
+/*
+phone screen: single column
+for both the character and film pages
+
+on the film page, don't show the character card anymore
+*/
 @media screen and (max-width:768px){
 
   .loading {
@@ -121,7 +135,6 @@ MEDIA QUERY FOR PHONE AND TABLET
     grid-template-areas:
       "title title title title"
       "image image meta meta"
-      /* "image image meta meta" */
       "image image . ."
       ;
   }

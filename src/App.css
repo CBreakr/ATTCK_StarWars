@@ -13,11 +13,9 @@
   --film-header-height-mobile: 33.5vh;
 }
 
-* {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
-}
+/*
+bring in the official Star Wars font
+*/
 
 @font-face {
   font-family:"STARWARS";
@@ -29,9 +27,27 @@
   font-style:normal;
 }
 
+/*
+Set some basics
+*/
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
 }
+
+a {
+  text-decoration: none;
+}
+
+/*
+  custom styling
+*/
 
 body {
   font-family:"STARWARS";
@@ -42,10 +58,6 @@ body {
   background:url('/images/space.jpg') top right no-repeat;
   background-attachment:fixed;
   background-size:cover;
-}
-
-a {
-  text-decoration: none;
 }
 
 .backgroundBlur{
@@ -97,6 +109,11 @@ HEADER
   top:0;
 }
 
+/*
+the header height needs to change
+to deal with the backlink
+*/
+
 .characterHeader {
   height: var(--character-header-height);
 }
@@ -131,7 +148,6 @@ BACKLINK
 }
 
 .backLink {
-  /* text-transform: uppercase; */
   width:20vmin;
   font-size: 2.7em;
   padding:1.1vmin;
@@ -150,6 +166,7 @@ BACKLINK
 
 /*
 CHARACTER
+(two columns by default)
 */
 
 .characterPage {
@@ -193,6 +210,7 @@ CHARACTER
 
 /*
 FILM PAGE
+(carosel by default)
 */
 
 .filmMainDisplay {
@@ -237,6 +255,10 @@ FILM PAGE
   justify-content: center;
 }
 
+/*
+Film Carosel
+*/
+
 .filmCarosel {
   margin-top: 7vh;
   display:grid;
@@ -257,6 +279,11 @@ FILM PAGE
   transition:0.3s;
 }
 
+.filmCaroselButton:hover {
+  background-color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .filmCaroselPrevious {
   margin-right:1vw;
   grid-area: previous;
@@ -265,11 +292,6 @@ FILM PAGE
 .filmCaroselNext {
   margin-left:1vw;
   grid-area:next;
-}
-
-.filmCaroselButton:hover {
-  background-color: rgba(255,255,255,0.3);
-  color: rgba(255, 255, 255, 0.7);
 }
 
 /*

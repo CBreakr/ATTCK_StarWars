@@ -19,6 +19,12 @@ const mapDispatchToProps = dispatch => {
     },
     receiveCharacterDetails: character => {
       DispatchActions.receiveCharacterDetails(character);
+    },
+    showPreviousFilm: () => {
+      dispatch(DispatchActions.showPreviousFilm());
+    },
+    showNextFilm: () => {
+      dispatch(DispatchActions.showNextFilm());
     }
   }
 };

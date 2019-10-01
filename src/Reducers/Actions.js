@@ -14,7 +14,9 @@ export const ActionTypes = {
   SET_FILM_PAGE:"SET_FILM_PAGE",
   RECEIVE_CHARACTERS:"RECEIVE_CHARACTERS",
   RECEIVE_FILM_IMAGES:"RECEIVE_FILM_IMAGES",
-  RECEIVE_CHARACTER_DETAILS:"RECEIVE_CHARACTER_DETAILS"
+  RECEIVE_CHARACTER_DETAILS:"RECEIVE_CHARACTER_DETAILS",
+  SET_PREVIOUS_FILM:"SET_PREVIOUS_FILM",
+  SET_NEXT_FILM:"SET_NEXT_FILM"
 };
 
 export const DispatchActions = {
@@ -84,6 +86,16 @@ export const DispatchActions = {
       character,
       details
     };
+  },
+  showPreviousFilm: dispatch => {
+    return {
+      type: ActionTypes.SET_PREVIOUS_FILM
+    }
+  },
+  showNextFilm: dispatch => {
+    return {
+      type: ActionTypes.SET_NEXT_FILM
+    }
   }
 };
 

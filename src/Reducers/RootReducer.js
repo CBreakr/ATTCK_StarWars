@@ -6,7 +6,8 @@ const initialState = {
   characters:[],
   filmImages:[],
   characterId: null,
-  isFilmPage:false
+  isFilmPage:false,
+  currentFilmIndex:null
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -17,11 +18,13 @@ const rootReducer = (state = initialState, action) => {
     case ActionTypes.SET_CHARACTER_PAGE:
       newState.isFilmPage = false;
       newState.characterId = null;
+      newState.currentFilmIndex = null;
       break;
     case ActionTypes.SET_FILM_PAGE:
       // console.log("set film page", action);
       newState.isFilmPage = true;
       newState.characterId = action.characterId;
+      newState.currentFilmIndex = 0;
       break;
     case ActionTypes.RECEIVE_CHARACTERS:
       newState.characters = action.characters;
@@ -45,6 +48,26 @@ const rootReducer = (state = initialState, action) => {
         current.filmImagesAdded = true;
       }
 
+      break;
+    case ActionTypes.SET_PREVIOUS_FILM:
+      if(newState.currentFilmIndex > 0){
+        newState.currentFilmIndex--;
+      }
+      break;
+    case ActionTypes.SET_NEXT_FILM:
+      if(newState.characterId && newState.characters){
+        const character = newState.characters.find(char => {
+          // matching string to number here
+          return newState.characterId == char.id;
+        });
+        if(
+          character
+          && character.films
+          && character.films.length > newState.currentFilmIndex+1
+        ){
+          newState.currentFilmIndex++;
+        }
+      }
       break;
     default:
       ;

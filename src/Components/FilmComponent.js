@@ -22,13 +22,13 @@ class Film extends React.Component {
 
     return (
       <div className="filmComponent">
-        <span style={{gridArea:"title"}}>
-          <div className="backgroundBlur" style={{fontSize:"2em", textTransform:"uppercase", padding:"1vw 1.5vw 0"}}>{film.title}</div>
-        </span>
+        <div style={{gridArea:"title", width:"80vw"}}>
+          <div className="backgroundBlur" style={{fontSize:"3em", textTransform:"none", padding:"1vw 1.5vw 0"}}>{film.title}</div>
+        </div>
         <span style={{gridArea:"image"}}>
-          <img style={{width:"30vw", border:"0.4vw solid var(--card-blue)"}} src={film.imageURL} />
+          <img style={{width:"50vw", border:"0.4vw solid var(--card-blue)"}} src={film.imageURL} />
         </span>
-        <span style={{gridArea:"meta", justifySelf:"center"}}>
+        <span style={{gridArea:"meta", justifySelf:"center", fontSize:"1.3em"}}>
           <div className="backgroundBlur" style={{marginTop:"2vw", paddingTop:"3vw", padding:"0.5vw"}}>
             <div style={{display:"inline-block"}}>DIRECTED&nbsp;BY:</div>
             <br />
@@ -41,7 +41,7 @@ class Film extends React.Component {
             <br />
             <div style={{display:"inline-block"}}>{`${date}`}</div>
             <br />
-            <div style={{display:"inline-block", fontSize:"1.7em"}}>{year}</div>
+            <div style={{display:"inline-block", fontSize:"2em"}}>{year}</div>
           </div>
         </span>
       </div>

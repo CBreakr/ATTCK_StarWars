@@ -8,9 +8,9 @@
   --background-black: rgba(0,0,0,0.85);
   --shadow: rgba(0,0,0,0.6);
   --backlink-white: rgba(230, 230, 230, 0.8);
-  --character-header-height: 24.5vw;
-  --film-header-height: 29vw;
-  --film-header-height-mobile: 36vw;
+  --character-header-height: 25vh;
+  --film-header-height: 29vh;
+  --film-header-height-mobile: 33.5vh;
 }
 
 * {
@@ -35,7 +35,7 @@ html, body {
 
 body {
   font-family:"STARWARS";
-  font-size:1vw; /* at optimal size, this is about 10px */
+  font-size:1vh; /* at optimal size, this is about 10px */
   color:var(--yellow);
   /* height:100vh; */
 
@@ -51,10 +51,10 @@ a {
 .backgroundBlur{
   background-image: radial-gradient(var(--background-black), var(--background-clear));
   text-shadow:
-  0.2vw 0.2vw 0.2vw var(--shadow),
-  -0.2vw -0.2vw 0.2vw var(--shadow),
-  -0.2vw 0.2vw 0.2vw var(--shadow),
-  0.2vw -0.2vw 0.2vw var(--shadow);
+  0.2vmin 0.2vmin 0.2vmin var(--shadow),
+  -0.2vmin -0.2vmin 0.2vmin var(--shadow),
+  -0.2vmin 0.2vmin 0.2vmin var(--shadow),
+  0.2vmin -0.2vmin 0.2vmin var(--shadow);
 }
 
 .mainContent {
@@ -66,8 +66,8 @@ Loading
 */
 
 .loading {
-  margin: 4vw auto;
-  font-size: 2vw;
+  margin: 4vmin auto;
+  font-size: 2vmin;
   animation: fadeInOut 2s infinite;
   animation-timing-function: ease-in-out;
   height: 100vh;
@@ -84,7 +84,7 @@ HEADER
 */
 
 .header {
-  padding-top:2vw;
+  padding-top:2vmin;
   text-align: center;
   /* allows the header to hide other contet */
   background:url('/images/space.jpg') top right no-repeat;
@@ -111,9 +111,9 @@ h1 {
 .instructions {
   background-color: var(--background-black);
   display: inline-block;
-  margin-top: 1vw;
+  margin-top: 1vmin;
   color: var(--card-blue);
-  font-size: 2.5vw;
+  font-size: 2.5vmin;
   z-index:15;
 }
 
@@ -126,24 +126,24 @@ BACKLINK
 */
 
 .backLinkContainer {
-  margin-top: 3vw;
+  margin-top: 3vmin;
 }
 
 .backLink {
   /* text-transform: uppercase; */
-  width:20vw;
+  width:20vmin;
   font-size: 2em;
-  padding:1.1vw;
+  padding:1.1vmin;
   color:black;
   background-color: var(--card-blue);
-  border: 0.4vw solid rgba(0, 0, 0, 0);
+  border: 0.4vmin solid rgba(0, 0, 0, 0);
   border-radius:2%;
-  text-shadow: 0.1vw 0.1vw 0.2vw var(--backlink-white);
+  text-shadow: 0.1vmin 0.1vmin 0.2vmin var(--backlink-white);
   transition: 0.3s;
 }
 
 .backLink:hover {
-  border: 0.4vw solid var(--card-blue);
+  border: 0.4vmin solid var(--card-blue);
   background-color: var(--backlink-white);
 }
 
@@ -169,13 +169,13 @@ CHARACTER
 .innerCharacter {
   display: flex;
   flex-direction: column;
-  border: 1vw solid var(--background-black);
+  border: 1vh solid var(--background-black);
   border-radius: 3%;
   transition: 0.3s;
 }
 
 .innerCharacterHover:hover {
-  border: 1vw solid var(--yellow);
+  border: 1vh solid var(--yellow);
   background-color: var(--yellow);
 }
 
@@ -187,7 +187,7 @@ CHARACTER
 }
 
 .characterCard {
-  height:40vw;
+  height:60vh;
 }
 
 /*
@@ -212,10 +212,6 @@ FILM PAGE
 }
 
 .filmListing {
-  position: relative;
-  left: 20vw;
-  top: -45vw;
-  width: 37vw;
   margin: 0 auto;
 
   display:flex;
@@ -224,16 +220,38 @@ FILM PAGE
 }
 
 .filmComponent {
-  margin-top: 3vh;
+  margin: 3vh auto;
   color: var(--card-blue);
+  width: 100%;
+  font-size:2em;
 
   display:grid;
+  column-gap: 3vw;
   grid-template-areas:
-    "title title title"
-    "image image meta"
-    "image image ."
+    "title title title title"
+    "image image meta meta"
+    /* "image image meta meta" */
+    "image image . ."
     ;
   justify-content: center;
+}
+
+/*
+MEDIA QUERY FOR WIDE DISPLAY
+*/
+@media screen and (min-width:1200px){
+  .characterPage {
+    margin: 0 auto;
+    padding-bottom: 2vh;
+    width: 95vw;
+    display: grid;
+    grid-gap: 0.2vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .characterCard {
+    height:50vh;
+  }
 }
 
 /*
@@ -248,13 +266,13 @@ MEDIA QUERY FOR PHONE AND TABLET
   }
 
   .instructions {
-    margin-top: 1.5vw;
+    margin-top: 1.2vh;
     font-size: 4vw;
   }
 
   .characterHeaderName {
-    margin-top: 1vw;
-    padding: 1vw;
+    margin-top: 1vh;
+    padding: 1vh;
     color: var(--card-blue);
     font-size: 5em;
     display: inline-block;
@@ -262,17 +280,17 @@ MEDIA QUERY FOR PHONE AND TABLET
   }
 
   .backLink {
-    font-size: 4.5em;
-    padding:1.3vw;
+    font-size: 4em;
+    padding:1vh;
   }
 
   .characterContainer {
-    margin-top: 1.5vw;
+    margin-top: 1.5vh;
   }
 
   .characterPage {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 

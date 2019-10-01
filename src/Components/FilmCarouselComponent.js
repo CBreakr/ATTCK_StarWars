@@ -3,7 +3,7 @@ import React from "react";
 
 import Film from "./FilmComponent";
 
-class FilmCarosel extends React.Component {
+class FilmCarousel extends React.Component {
 
   constructor(){
     super();
@@ -37,7 +37,7 @@ class FilmCarosel extends React.Component {
     }
 
     return (
-      <div className="filmCarosel">
+      <div className="filmCarousel">
       {
         character && film
         ?
@@ -45,7 +45,7 @@ class FilmCarosel extends React.Component {
           {
             index > 0
             ? <div
-                className="filmCaroselButton filmCaroselPrevious"
+                className="filmCarouselButton filmCarouselPrevious"
                 onClick={this.showPreviousFilm}
               >
                 <span>
@@ -60,7 +60,7 @@ class FilmCarosel extends React.Component {
           {
             index + 1 < length
             ? <div
-                className="filmCaroselButton filmCaroselNext"
+                className="filmCarouselButton filmCarouselNext"
                 onClick={this.showNextFilm}
               >
                 <span>
@@ -77,4 +77,4 @@ class FilmCarosel extends React.Component {
   }
 }
 
-export default FilmCarosel;
+export default FilmCarousel;

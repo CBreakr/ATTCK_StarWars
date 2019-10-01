@@ -9,7 +9,7 @@ import MediaQuery from "react-responsive";
 
 import Character from "./CharacterComponent";
 import Film from "./FilmComponent";
-import FilmCarosel from "./FilmCaroselComponent";
+import FilmCarousel from "./FilmCarouselComponent";
 
 class FilmPage extends React.Component {
 
@@ -57,7 +57,7 @@ class FilmPage extends React.Component {
         <MediaQuery query="(min-width:769px)">
           <div className="filmMainDisplay">
             <Character character={character} />
-            <FilmCarosel
+            <FilmCarousel
               character={character}
               currentFilmIndex={this.props.currentFilmIndex}
               showPreviousFilm={this.props.showPreviousFilm}

@@ -40,11 +40,11 @@ and so ths sizing and spacing needs to be adjusted
     height: 50vh;
   }
 
-  .filmCarosel {
+  .filmCarousel {
     margin-top: 2vh;
   }
 
-  .filmCaroselButton {
+  .filmCarouselButton {
     width: 3vw;
     font-size: 2em;
   }

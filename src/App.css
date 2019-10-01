@@ -209,7 +209,7 @@ CHARACTER
 
 /*
 FILM PAGE
-(carosel by default)
+(carousel by default)
 */
 
 .filmMainDisplay {
@@ -255,17 +255,17 @@ FILM PAGE
 }
 
 /*
-Film Carosel
+Film Carousel
 */
 
-.filmCarosel {
+.filmCarousel {
   margin-top: 7vh;
   display:grid;
   grid-template-areas:
   "previous component next";
 }
 
-.filmCaroselButton {
+.filmCarouselButton {
   width: 5vw;
   background-color: rgba(255,255,255,0.2);
   color: rgba(255, 255, 255, 0.5);
@@ -278,17 +278,17 @@ Film Carosel
   transition:0.3s;
 }
 
-.filmCaroselButton:hover {
+.filmCarouselButton:hover {
   background-color: rgba(255,255,255,0.3);
   color: rgba(255, 255, 255, 0.7);
 }
 
-.filmCaroselPrevious {
+.filmCarouselPrevious {
   margin-right:1vw;
   grid-area: previous;
 }
 
-.filmCaroselNext {
+.filmCarouselNext {
   margin-left:1vw;
   grid-area:next;
 }

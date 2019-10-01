@@ -14,16 +14,16 @@ class Character extends React.Component {
         {
           isLink
         ? <Link className="characterLink" to={filmsURL}>
-            <InnerComponent character={this.props.character} isLink={true} />
+            <CharacterDisplay character={this.props.character} isLink={true} />
           </Link>
-        : <InnerComponent character={this.props.character} isLink={false} />
+        : <CharacterDisplay character={this.props.character} isLink={false} />
         }
       </div>
     );
   }
 }
 
-const InnerComponent = (props) => {
+const CharacterDisplay = (props) => {
   let classes = "innerCharacter";
   if(props.isLink){
     classes = `${classes} innerCharacterHover`;

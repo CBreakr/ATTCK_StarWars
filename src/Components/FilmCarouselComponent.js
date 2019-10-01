@@ -38,10 +38,11 @@ class FilmCarousel extends React.Component {
 
     return (
       <div className="filmCarousel">
+      {/* only display if we have both a character and a film */}
       {
         character && film
-        ?
-        <>
+        ? <>
+          {/* previous button */}
           {
             index > 0
             ? <div
@@ -55,8 +56,10 @@ class FilmCarousel extends React.Component {
             : ""
           }
 
+          {/* the main display of film information */}
           <Film key={film.episode_id} film={film} />
 
+          {/* next button */}
           {
             index + 1 < length
             ? <div

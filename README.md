@@ -7,6 +7,8 @@ The page will load a set of pre-selected characters to a main selection page and
 
 While looking for character images of roughly uniform size and quality to use, I stumbled across some old trading cards. I decided that I wanted to go for a somewhat retro feel to the page while leaning on the colors and styles of the films (including the original star background). I thought that this worked well with the fact that the data and interaction of the page was limited.
 
+Because the data is subject to change only very infrequently, the calls to the API will only be made if that data hasn't already been retrieved and stored in state this session.
+
 ### Styling
 
 The page is responsive, with differing displays for mobile, web, and varying larger widths. Mobile displays have a single column, while wider displays have multiple columns and a "carousel" for the film listing.

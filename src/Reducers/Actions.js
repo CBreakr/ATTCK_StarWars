@@ -41,6 +41,9 @@ export const DispatchActions = {
       console.log("error request character list", err);
     });
   },
+  // set the character list data
+  // once we have it from the local config
+  // or already stored in object
   receiveCharacters: characters => {
     return {
       type:ActionTypes.RECEIVE_CHARACTERS,
@@ -57,6 +60,9 @@ export const DispatchActions = {
       console.log("error request film images", err);
     });
   },
+  // set the film images
+  // once we have it from the local config
+  // or already stored in object
   receiveFilmImages: images => {
     return {
       type: ActionTypes.RECEIVE_FILM_IMAGES,
@@ -78,6 +84,9 @@ export const DispatchActions = {
       console.log("error request films for character", err, character);
     });
   },
+  // set the character and films details
+  // once we have it from the API
+  // or already stored in object
   receiveCharacterDetails: (character, details) => {
     return {
       type: ActionTypes.RECEIVE_CHARACTER_DETAILS,
@@ -85,6 +94,8 @@ export const DispatchActions = {
       details
     };
   },
+  // these methods are for navigating
+  // the film carousel
   showPreviousFilm: dispatch => {
     return {
       type: ActionTypes.SET_PREVIOUS_FILM
@@ -98,7 +109,10 @@ export const DispatchActions = {
 };
 
 //
-//
+// trigger all of the API calls for film
+// based on the list from the character
+// and then wait for them all to complete
+// before sorting them
 //
 async function addDetailsToCharacter(character, details){
   character.films = [];
@@ -141,7 +155,7 @@ export function filmSort(films){
 }
 
 //
-//
+// make the call to the API
 //
 async function fetchFilmDetails(filmURL){
   const res = await fetch(filmURL, fetchOptionsJSON);

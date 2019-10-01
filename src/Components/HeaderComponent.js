@@ -25,6 +25,15 @@ class Header extends React.Component {
     return (
       <div className={classes}>
         <h1>STAR<br />WARS</h1>
+        {/* for the film page, we have a link button
+          back to the main character page
+
+          on mobile, the character name will
+          be added to the header
+
+          for the character page, we
+          have a simple instruction message
+        */}
         {this.props.isFilmPage
           ? <>
             <div className="characterHeaderName textShadowDark">

@@ -21,7 +21,6 @@ const rootReducer = (state = initialState, action) => {
       newState.currentFilmIndex = null;
       break;
     case ActionTypes.SET_FILM_PAGE:
-      // console.log("set film page", action);
       newState.isFilmPage = true;
       newState.characterId = action.characterId;
       newState.currentFilmIndex = 0;
@@ -50,6 +49,7 @@ const rootReducer = (state = initialState, action) => {
 
       break;
     case ActionTypes.SET_PREVIOUS_FILM:
+      // check to make sure that we're in bounds
       if(newState.currentFilmIndex > 0){
         newState.currentFilmIndex--;
       }
@@ -60,6 +60,8 @@ const rootReducer = (state = initialState, action) => {
           // matching string to number here
           return newState.characterId == char.id;
         });
+
+        // check to make sure that we're in bounds
         if(
           character
           && character.films
@@ -77,7 +79,9 @@ const rootReducer = (state = initialState, action) => {
 }
 
 //
-//
+// replace a character in the state list
+// with a new reference, so that we don't
+// mutate the state
 //
 function replaceCharacterInList(state, character){
   // return the character that's found
@@ -95,7 +99,8 @@ function replaceCharacterInList(state, character){
 }
 
 //
-//
+// attach the imageURL from the
+// config list to the state object
 //
 function addImageToFilm(state, film){
   const match = state.filmImages.find(element => {
@@ -109,7 +114,4 @@ function addImageToFilm(state, film){
   return match;
 }
 
-//
-//
-//
 export default rootReducer;

@@ -17,6 +17,9 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/films/:characterId" component={FilmPage} />
             <Route exact path="/" component={CharacterPage} />
+            {/*
+                redirect any other routes back to the main page
+            */}
             <Redirect to="/" />
           </Switch>
         </div>

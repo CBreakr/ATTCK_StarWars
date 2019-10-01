@@ -6,6 +6,8 @@ import Character from "./CharacterComponent";
 class CharacterPage extends React.Component{
 
   componentDidMount(){
+    // request any data we don't yet have
+
     if(!this.props.filmImages){
       this.props.requestFilmImages();
     }
@@ -14,6 +16,7 @@ class CharacterPage extends React.Component{
       this.props.requestCharacters();
     }
 
+    // always set the current page
     this.props.setPageToCharacter();
   }
 
@@ -33,9 +36,5 @@ class CharacterPage extends React.Component{
     );
   }
 }
-
-/*
-{}
-*/
 
 export default CharacterPage;

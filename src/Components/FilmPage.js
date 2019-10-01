@@ -4,9 +4,6 @@ import { Redirect } from "react-router-dom";
 
 import MediaQuery from "react-responsive";
 
-// import Character from "../Containers/CharacterContainer";
-// import Film from "../Containers/FilmContainer";
-
 import Character from "./CharacterComponent";
 import Film from "./FilmComponent";
 import FilmCarousel from "./FilmCarouselComponent";
@@ -14,10 +11,12 @@ import FilmCarousel from "./FilmCarouselComponent";
 class FilmPage extends React.Component {
 
   componentDidMount(){
+    // nothing to do in this case
     if(!this.props.characters){
       return;
     }
 
+    // get the character id from the query string
     const characterId = this.props.match.params.characterId;
 
     const character = this.props.characters.find(char => {
@@ -25,17 +24,23 @@ class FilmPage extends React.Component {
       return characterId == char.id;
     });
 
+    // if we don't have the films, go to the API
+    // otherwise just set them and continue with the render
     if(character && !character.films){
       this.props.requestCharacterDetails(character);
     }
-    else{
+    else if(character){
       this.props.receiveCharacterDetails(character);
     }
 
+    // always set the current page
     this.props.setPageToFilm(characterId);
   }
 
   render(){
+    // redirect to the main page if the user
+    // tries to enter a URL without first having
+    // loaded the character data
     if(!this.props.characters){
       return (
         <Redirect to="/" />
@@ -50,10 +55,14 @@ class FilmPage extends React.Component {
 
     return (
       <>
+        {/* handle switching between display modes in here */}
+
+        {/* mobile version */}
         <MediaQuery query="(max-width:768px)">
           <FilmListing character={character} />
         </MediaQuery>
 
+        {/* web versions */}
         <MediaQuery query="(min-width:769px)">
           <div className="filmMainDisplay">
             <Character character={character} />
@@ -70,6 +79,7 @@ class FilmPage extends React.Component {
   }
 }
 
+// just a simple dump of the Films as divs
 const FilmListing = (props) => {
   const character = props.character;
 

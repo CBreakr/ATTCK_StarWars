@@ -7,7 +7,11 @@ The page will load a set of pre-selected characters to a main selection page and
 
 While looking for character images of roughly uniform size and quality to use, I stumbled across some old trading cards. I decided that I wanted to go for a somewhat retro feel to the page while leaning on the colors and styles of the films (including the original star background). I thought that this worked well with the fact that the data and interaction of the page was limited.
 
+### Styling
+
 The page is responsive, with differing displays for mobile, web, and varying larger widths. Mobile displays have a single column, while wider displays have multiple columns and a "carousel" for the film listing.
+
+I had originally kept my styling within the react components, but the degree of interconnection between the styles and the layers of media queries made it feel easier to manage as separate central css files.
 
 ## Default CRA Information
 

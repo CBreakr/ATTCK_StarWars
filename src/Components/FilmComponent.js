@@ -22,26 +22,26 @@ class Film extends React.Component {
 
     return (
       <div className="filmComponent">
-        <div style={{gridArea:"title", width:"80vw"}}>
-          <div className="backgroundBlur" style={{fontSize:"3em", textTransform:"none", padding:"1vw 1.5vw 0"}}>{film.title}</div>
+        <div className="filmTitle backgroundBlur">
+          {film.title}
         </div>
-        <span style={{gridArea:"image"}}>
-          <img style={{width:"50vw", border:"0.4vw solid var(--card-blue)"}} src={film.imageURL} />
-        </span>
-        <span style={{gridArea:"meta", justifySelf:"center", fontSize:"1.3em"}}>
-          <div className="backgroundBlur" style={{marginTop:"2vw", paddingTop:"3vw", padding:"0.5vw"}}>
-            <div style={{display:"inline-block"}}>DIRECTED&nbsp;BY:</div>
+        <div className="filmImageContainer">
+          <img className="filmImage" src={film.imageURL} alt={film.title} />
+        </div>
+        <span className="filmMeta">
+          <div className="backgroundBlur filmDirectedByContainer">
+            <div className="filmDirectedByHeader">DIRECTED&nbsp;BY:</div>
             <br />
-            <div style={{display:"inline-block", margin:"0.5vw"}}>{film.director}</div>
+            <div className="filmDirectedBy">{film.director}</div>
           </div>
-          <div className="backgroundBlur" style={{marginTop:"0.2vw", padding:"0.5vw"}}>
-            <div style={{display:"inline-block"}}>RELEASED:</div>
+          <div className="backgroundBlur filmReleasedContainer">
+            <div className="filmReleasedHeader">RELEASED:</div>
             <br />
-            <div style={{display:"inline-block"}}>{`${day},`}</div>
+            <div className="filmReleasedDayName">{`${day},`}</div>
             <br />
-            <div style={{display:"inline-block"}}>{`${date}`}</div>
+            <div className="filmReleasedMonthAndDate">{`${date}`}</div>
             <br />
-            <div style={{display:"inline-block", fontSize:"2em"}}>{year}</div>
+            <div className="filmReleasedYear">{year}</div>
           </div>
         </span>
       </div>

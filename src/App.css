@@ -58,6 +58,7 @@ a {
 }
 
 .mainContent {
+  padding-bottom:3vh;
   background-color: var(--background-black);
 }
 
@@ -67,7 +68,7 @@ Loading
 
 .loading {
   margin: 4vmin auto;
-  font-size: 2vmin;
+  font-size: 2vh;
   animation: fadeInOut 2s infinite;
   animation-timing-function: ease-in-out;
   height: 100vh;
@@ -132,7 +133,7 @@ BACKLINK
 .backLink {
   /* text-transform: uppercase; */
   width:20vmin;
-  font-size: 2em;
+  font-size: 2.5em;
   padding:1.1vmin;
   color:black;
   background-color: var(--card-blue);
@@ -194,21 +195,22 @@ CHARACTER
 FILM PAGE
 */
 
-.filmMainDisplay {
 
+.filmMainDisplay {
+  display:grid;
+  grid-gap:2vw;
+  grid-template-columns: 1fr 2fr;
 }
 
 .filmMainDisplay .characterContainer {
-  position:sticky;
-  top: var(--film-header-height);
-  width: 30vw;
-  left: 0;
-  margin: 0 2vw;
+  height: 40vh;
+  margin: 4.2vh 2vh;
   border: 0;
 }
 
 .filmMainDisplay .innerCharacter {
   border: none;
+  display: block;
 }
 
 .filmListing {
@@ -220,20 +222,122 @@ FILM PAGE
 }
 
 .filmComponent {
-  margin: 3vh auto;
   color: var(--card-blue);
-  width: 100%;
+  width: 50vw;
   font-size:2em;
+
+  grid-area:component;
 
   display:grid;
   column-gap: 3vw;
   grid-template-areas:
-    "title title title title"
-    "image image meta meta"
-    /* "image image meta meta" */
-    "image image . ."
+    "image title"
+    "image meta"
+    "image ."
     ;
   justify-content: center;
+}
+
+.filmCarosel {
+  margin-top: 7vh;
+  display:grid;
+  grid-template-areas:
+  "previous component next";
+}
+
+.filmCaroselButton {
+  width: 5vw;
+  background-color: rgba(255,255,255,0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 3em;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:0.3s;
+}
+
+.filmCaroselPrevious {
+  margin-right:1vw;
+  grid-area: previous;
+}
+
+.filmCaroselNext {
+  margin-left:1vw;
+  grid-area:next;
+}
+
+.filmCaroselButton:hover {
+  background-color: rgba(255,255,255,0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+Inside the film component
+*/
+
+.filmTitle {
+  grid-area:title;
+  font-size:3em;
+  padding:2vh 0 0;
+  text-align: center;
+}
+
+.filmImageContainer {
+  grid-area:image;
+}
+
+.filmImage {
+  height:60vh;
+  border:0.4vh solid var(--card-blue);
+}
+
+.filmMeta {
+  grid-area:meta;
+  justify-self:center;
+}
+
+.filmDirectedByContainer {
+  margin-top:2vw;
+  padding-top:3vw;
+  padding:0.5vw;
+}
+
+.filmDirectedByHeader {
+  display:inline-block;
+  font-size:1.5em;
+}
+
+.filmDirectedBy {
+  display:inline-block;
+  margin:1vw;
+}
+
+.filmReleasedContainer {
+  margin-top:0.5vw;
+  padding:0.5vw;
+}
+
+.filmReleasedHeader {
+  display:inline-block;
+  font-size:1.5em;
+}
+
+.filmReleasedDayName {
+  display:inline-block;
+  margin:1vw;
+}
+
+.filmReleasedMonthAndDate {
+  display:inline-block;
+  margin:1vw;
+}
+
+.filmReleasedYear {
+  display:inline-block;
+  margin:1vw;
+  font-size:2em;
 }
 
 /*
@@ -249,8 +353,49 @@ MEDIA QUERY FOR WIDE DISPLAY
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
+  /* ignore this effect on the film page */
+  .filmMainDisplay .characterCard {
+    height: 60vh;
+  }
+
   .characterCard {
     height:50vh;
+  }
+}
+
+/*
+MEDIA QUERY FOR medium screen on film page
+*/
+
+@media screen and (min-width:768px) and (max-width:970px){
+  .filmMainDisplay .characterCard {
+    height: 50vh;
+  }
+
+  .filmCarosel {
+    margin-top: 2vh;
+  }
+
+  .filmCaroselButton {
+    width: 3vw;
+    font-size: 2em;
+  }
+
+  .filmComponent {
+    grid-template-areas:
+      "title title"
+      "image meta"
+      "image ."
+      ;
+  }
+
+  .filmTitle{
+    padding:0;
+  }
+
+  .filmImage {
+    height:50vh;
+    border:0.4vh solid var(--card-blue);
   }
 }
 
@@ -260,6 +405,10 @@ MEDIA QUERY FOR PHONE AND TABLET
 
 /* phone screen: single column */
 @media screen and (max-width:768px){
+
+  .loading {
+    font-size: 4vh;
+  }
 
   .filmHeader {
     height: var(--film-header-height-mobile);
@@ -303,13 +452,87 @@ MEDIA QUERY FOR PHONE AND TABLET
     width: 60vw;
   }
 
-  .filmMainDisplay .characterContainer {
-    display: none;
+  .filmComponent {
+    margin: 3vh auto;
+
+    grid-template-areas:
+      "title title title title"
+      "image image meta meta"
+      /* "image image meta meta" */
+      "image image . ."
+      ;
   }
 
   .filmListing {
     top: auto;
     left: auto;
     width: 80vw;
+  }
+
+  /*
+  Inside the film component
+  */
+
+  .filmTitle {
+    grid-area:title;
+    width:80vw;
+    font-size:3em;
+    padding:1vw 1.5vw 0;
+  }
+
+  .filmImageContainer {
+    grid-area:image;
+  }
+
+  .filmImage {
+    height:55vh;
+    border:0.4vw solid var(--card-blue);
+  }
+
+  .filmMeta {
+    grid-area:meta;
+    justify-self:center;
+  }
+
+  .filmDirectedByContainer {
+    margin-top:2vw;
+    padding-top:3vw;
+    padding:0.5vw;
+  }
+
+  .filmDirectedByHeader {
+    display:inline-block;
+    font-size:1.5em;
+  }
+
+  .filmDirectedBy {
+    display:inline-block;
+    margin:1vw;
+  }
+
+  .filmReleasedContainer {
+    margin-top:0.5vw;
+    padding:0.5vw;
+  }
+
+  .filmReleasedHeader {
+    display:inline-block;
+    font-size:1.5em;
+  }
+
+  .filmReleasedDayName {
+    display:inline-block;
+    margin:1vw;
+  }
+
+  .filmReleasedMonthAndDate {
+    display:inline-block;
+    margin:1vw;
+  }
+
+  .filmReleasedYear {
+    display:inline-block;
+    margin:1vw;
+    font-size:2em;
   }
 }

@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Character from "../Containers/CharacterContainer";
+import Character from "./CharacterComponent";
 
 class CharacterPage extends React.Component{
 

@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Film from "../Containers/FilmContainer";
+import Film from "./FilmComponent";
 
 class FilmCarosel extends React.Component {
 

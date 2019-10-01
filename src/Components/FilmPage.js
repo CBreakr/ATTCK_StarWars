@@ -4,8 +4,11 @@ import { Redirect, Link } from "react-router-dom";
 
 import MediaQuery from "react-responsive";
 
-import Character from "../Containers/CharacterContainer";
-import Film from "../Containers/FilmContainer";
+// import Character from "../Containers/CharacterContainer";
+// import Film from "../Containers/FilmContainer";
+
+import Character from "./CharacterComponent";
+import Film from "./FilmComponent";
 import FilmCarosel from "./FilmCaroselComponent";
 
 class FilmPage extends React.Component {

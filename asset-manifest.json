@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ATTCK_StarWars/static/css/main.d95c6adc.chunk.css",
+    "main.js": "/ATTCK_StarWars/static/js/main.39427a13.chunk.js",
+    "main.js.map": "/ATTCK_StarWars/static/js/main.39427a13.chunk.js.map",
+    "runtime-main.js": "/ATTCK_StarWars/static/js/runtime-main.e0cc40a5.js",
+    "runtime-main.js.map": "/ATTCK_StarWars/static/js/runtime-main.e0cc40a5.js.map",
+    "static/js/2.3250a279.chunk.js": "/ATTCK_StarWars/static/js/2.3250a279.chunk.js",
+    "static/js/2.3250a279.chunk.js.map": "/ATTCK_StarWars/static/js/2.3250a279.chunk.js.map",
+    "index.html": "/ATTCK_StarWars/index.html",
+    "precache-manifest.801691a6b085b751c60dc2ac95c00631.js": "/ATTCK_StarWars/precache-manifest.801691a6b085b751c60dc2ac95c00631.js",
+    "service-worker.js": "/ATTCK_StarWars/service-worker.js",
+    "static/css/main.d95c6adc.chunk.css.map": "/ATTCK_StarWars/static/css/main.d95c6adc.chunk.css.map"
+  }
+}

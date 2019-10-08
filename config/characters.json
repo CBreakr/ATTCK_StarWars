@@ -1,0 +1,33 @@
+
+{
+
+"__comments": {
+    "1": "added closing braces",
+    "2": "corrected Obi-wan's id to be 10",
+    "3": "corrected R2-D2's id to be 3",
+    "4": "added imageURL property to characters",
+    "5": "added id field to the character"
+  },
+
+"characters": [{
+  "id":1,
+  "name": "Luke Skywalker",
+  "URL": "https://swapi.co/api/people/1/",
+  "imageURL": "/images/luke.jpg"
+}, {
+  "id":4,
+  "name": "Darth Vader",
+  "URL": "https://swapi.co/api/people/4/",
+  "imageURL": "/images/vader.jpg"
+}, {
+  "id":10,
+  "name": "Obi-wan Kenobi",
+  "URL": "https://swapi.co/api/people/10/",
+  "imageURL": "/images/obiwan.jpg"
+}, {
+  "id":3,
+  "name": "R2-D2",
+  "URL": "https://swapi.co/api/people/3/",
+  "imageURL": "/images/r2d2.jpg"
+}]
+}

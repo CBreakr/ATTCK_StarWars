@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b4be6521926685653a331b7d8c638cb",
+    "revision": "aeae7c5d92135d979aa4bf9a16992f7c",
     "url": "/ATTCK_StarWars/index.html"
   },
   {

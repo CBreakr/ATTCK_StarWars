@@ -15,9 +15,11 @@ const store = createStore(rootReducer,
 window.__REDUX_DEVTOOLS_EXTENSION__ &&
 window.__REDUX_DEVTOOLS_EXTENSION__());
 
+const routerBaseName = "https://CBreakr.github.io/ATTCK_StarWars/";
+
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename={routerBaseName}>
       <ScrollToTop>
         <App store={store} />
       </ScrollToTop>

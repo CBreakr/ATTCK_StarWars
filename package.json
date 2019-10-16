@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "homepage": ".",
-  ,"EXTRA____":"http://CBreakr.github.io/ATTCK_StarWars", 
+  "EXTRA____":"http://CBreakr.github.io/ATTCK_StarWars", 
   "dependencies": {
     "dateformat": "^3.0.3",
     "gh-pages": "^2.1.1",

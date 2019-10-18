@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -17,12 +17,14 @@ window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const routerBaseName = "/ATTCK_StarWars";
 
+// <BrowserRouter basename={routerBaseName}>
+
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={routerBaseName}>
+    <HashRouter>
       <ScrollToTop>
         <App store={store} />
       </ScrollToTop>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.getElementById('root'));

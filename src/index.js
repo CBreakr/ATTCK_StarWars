@@ -19,12 +19,14 @@ const routerBaseName = "/ATTCK_StarWars";
 
 // <BrowserRouter basename={routerBaseName}>
 
+console.log(`public URL: ${process.env.PUBLIC_URL}`);
+
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter basename="/">
+    <BrowserRouter basename={routerBaseName}>
       <ScrollToTop>
         <App store={store} />
       </ScrollToTop>
-    </HashRouter>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root'));

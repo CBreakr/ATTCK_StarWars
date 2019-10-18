@@ -21,7 +21,7 @@ const routerBaseName = "/ATTCK_StarWars";
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <HashRouter basename="/">
       <ScrollToTop>
         <App store={store} />
       </ScrollToTop>

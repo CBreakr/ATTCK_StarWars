@@ -12,7 +12,6 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1>BBBBBBBBBBBBBBBBBBB</h1>
         <Header />
         <div className="mainContent">
           <Switch>

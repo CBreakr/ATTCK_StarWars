@@ -55,7 +55,7 @@ body {
   color:var(--yellow);
   /* height:100vh; */
 
-  background:url('/images/space.jpg') top right no-repeat;
+  background:url('images/space.jpg') top right no-repeat;
   background-attachment:fixed;
   background-size:cover;
 }

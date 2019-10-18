@@ -11,6 +11,9 @@ import FilmCarousel from "./FilmCarouselComponent";
 class FilmPage extends React.Component {
 
   componentDidMount(){
+
+    console.log(`public URL on film page: ${process.env.PUBLIC_URL}`);
+
     // nothing to do in this case
     if(!this.props.characters){
       return;

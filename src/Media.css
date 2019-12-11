@@ -35,7 +35,7 @@ MEDIA QUERY FOR medium screen on film page
 the screen gets too cramped in this range,
 and so ths sizing and spacing needs to be adjusted
 */
-@media screen and (min-width:768px) and (max-width:970px){
+@media screen and (min-width:820px) and (max-width:970px){
   .filmMainDisplay .characterCard {
     height: 50vh;
   }

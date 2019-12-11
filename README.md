@@ -3,6 +3,8 @@
 
 This toy application is meant to serve as a demonstration of React and CSS using a fun and familiar subject - Star Wars.
 
+To see the application in action, please [click here](https://pacific-fortress-58867.herokuapp.com/). Please note that Heroku, where this is deployed, can sometimes take a bit of time to spin up.
+
 The page will load a set of pre-selected characters to a main selection page and allow the user to click on their card displays to see a list of the films that character has been featured in.
 
 While looking for character images of roughly uniform size and quality to use, I stumbled across some old trading cards. I decided that I wanted to go for a somewhat retro feel to the page while leaning on the colors and styles of the films (including the original star background). I thought that this worked well with the fact that the data and interaction of the page was limited.

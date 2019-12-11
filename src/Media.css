@@ -76,12 +76,12 @@ MEDIA QUERY FOR PHONE AND TABLET
 */
 
 /*
-phone screen: single column
+phone screen: single column (768px)
 for both the character and film pages
 
 on the film page, don't show the character card anymore
 */
-@media screen and (max-width:768px){
+@media screen and (max-width:820px){
 
   .loading {
     font-size: 4vh;
